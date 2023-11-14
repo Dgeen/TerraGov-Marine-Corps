@@ -226,3 +226,7 @@
 2023-11-13:
   Lewdcifer:
   - bugfix: Fixed some weird behavior in the larva queue.
+2023-11-14:
+  Xander3359:
+  - imageadd: Harvesters will now have a visual based on whichever reagent is loaded
+  - code_imp: Harvesters now have sprites + code in their own separate file
