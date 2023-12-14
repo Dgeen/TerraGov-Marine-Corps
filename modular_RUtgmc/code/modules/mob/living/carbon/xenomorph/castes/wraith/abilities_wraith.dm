@@ -13,35 +13,6 @@
 	cooldown_duration = 30 SECONDS
 
 // ***************************************
-// *********** Banish
-// ***************************************
-
-///Ends the effect of the Banish ability
-/datum/action/ability/activable/xeno/banish/banish_deactivate()
-	if(QDELETED(banishment_target))
-		return
-	var/turf/return_turf = get_turf(portal)
-	if(!return_turf)
-		return_turf = locate(backup_coordinates[1], backup_coordinates[2], backup_coordinates[3])
-
-	for(var/atom/victim in return_turf)
-		if(!ismovableatom(victim))
-			continue
-		var/atom/movable/movable_victim = victim
-		if(movable_victim.anchored)
-			continue
-		if(ishuman(movable_victim))
-			var/mob/living/carbon/human/H = movable_victim
-			if(H.stat == DEAD)
-				continue
-		if(movable_victim)
-			var/turf/targetturf = return_turf
-			targetturf = locate(targetturf.x + rand(-1, 1), targetturf.y + rand(-1, 1), targetturf.z)
-			movable_victim.throw_at(targetturf, 2, 1, owner, FALSE, FALSE)
-
-	return ..()
-
-// ***************************************
 // *********** Portal
 // ***************************************
 /datum/action/ability/xeno_action/portal
