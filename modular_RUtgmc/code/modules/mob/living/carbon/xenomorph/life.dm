@@ -35,8 +35,8 @@
 	handle_regular_health_hud_updates()
 
 	// Evolve Hud
-	hud_used.alien_evolve_display.overlays.Cut()
 	if(hud_used && hud_used.alien_evolve_display)
+		hud_used.alien_evolve_display.overlays.Cut()
 		if(stat != DEAD)
 			var/amount = 0
 			if(xeno_caste.evolution_threshold)
@@ -52,8 +52,8 @@
 			hud_used.alien_evolve_display.icon_state = "evolve_empty"
 
 	//Sunder Hud
-	hud_used.alien_sunder_display.overlays.Cut()
 	if(hud_used && hud_used.alien_sunder_display)
+		hud_used.alien_sunder_display.overlays.Cut()
 		if(stat != DEAD)
 			var/amount = round( 100 - sunder , 5)
 			hud_used.alien_sunder_display.icon_state = "sunder[amount]"
