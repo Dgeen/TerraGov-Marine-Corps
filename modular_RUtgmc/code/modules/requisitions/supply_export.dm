@@ -3,11 +3,11 @@
 	. = ..()
 	switch(job.job_category)
 		if(JOB_CAT_CIVILIAN)
-			. = 10
+			. = list(10, 1)
 		if(JOB_CAT_ENGINEERING, JOB_CAT_MEDICAL, JOB_CAT_REQUISITIONS)
-			. = 150
+			. = list(150, 15)
 		if(JOB_CAT_MARINE)
-			. = 100
+			. = list(100, 10)
 	return
 
 /proc/can_sell_human_body(mob/living/carbon/human/human_to_sell, seller_faction)
@@ -31,4 +31,4 @@
 	return new /datum/export_report(45, name, faction_selling)
 
 /obj/item/reagent_containers/food/snacks/req_pizza/get_export_value()
-	return 30
+	return list(30, 0)
