@@ -67,4 +67,5 @@ GLOBAL_LIST_INIT(forbid_excepts, list(
 	/mob/living/carbon/xenomorph/shrike,
 	/mob/living/carbon/xenomorph/larva,
 	/mob/living/carbon/xenomorph/drone,
+	/mob/living/carbon/xenomorph/hivemind,
 	))
