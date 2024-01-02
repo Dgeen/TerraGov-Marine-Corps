@@ -1,73 +1,9 @@
-//TE Standard Laser rifle
-
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_rifle
-	icon_state = "ter"
-	item_state = "ter"
-	greyscale_config = null
-	colorable_allowed = NONE
-	item_icons = list(
-		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
-		slot_r_hand_str = 'icons/mob/items_righthand_1.dmi',
-		)
-
-/datum/lasrifle/energy_rifle_mode/standard
-	icon_state = "ter"
-
-/datum/lasrifle/energy_rifle_mode/overcharge
-	icon_state = "ter"
-
-/datum/lasrifle/energy_rifle_mode/weakening
-	icon_state = "ter"
-
-/datum/lasrifle/energy_rifle_mode/microwave
-	icon_state = "ter"
-
-///TE Standard Laser Pistol
-
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_pistol
-	icon_state = "tep"
-	item_state = "tep"
-	greyscale_config = null
-	colorable_allowed = NONE
-	item_icons = list(
-		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
-		slot_r_hand_str = 'icons/mob/items_righthand_1.dmi',
-		)
-
-/datum/lasrifle/energy_pistol_mode/standard
-	icon_state = "tep"
-
-/datum/lasrifle/energy_pistol_mode/disabler
-	icon_state = "tep"
-
-/datum/lasrifle/energy_pistol_mode/heat
-	icon_state = "tep"
-
 //TE Standard Laser Carbine
 
 /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_carbine
-	icon_state = "tec"
-	item_state = "tec"
-	greyscale_config = null
-	colorable_allowed = NONE
-	item_icons = list(
-		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
-		slot_r_hand_str = 'icons/mob/items_righthand_1.dmi',
-		)
 	autoburst_delay = 1.3 SECONDS
 	akimbo_additional_delay = 2
 
-/datum/lasrifle/energy_carbine_mode/auto_burst
-	icon_state = "tec"
-
-/datum/lasrifle/energy_carbine_mode/base/spread
-	icon_state = "tec"
-
-/datum/lasrifle/energy_carbine_mode/base/impact
-	icon_state = "tec"
-
-/datum/lasrifle/energy_carbine_mode/base/cripple
-	icon_state = "tec"
 
 //TE Standard Sniper
 
@@ -77,8 +13,6 @@
 	icon = 'modular_RUtgmc/icons/Marine/gun64.dmi'
 	icon_state = "tes"
 	item_state = "tes"
-	greyscale_config = null
-	colorable_allowed = NONE
 	item_icons = list(
 		slot_l_hand_str = 'modular_RUtgmc/icons/mob/items_lefthand_64.dmi',
 		slot_r_hand_str = 'modular_RUtgmc/icons/mob/items_righthand_64.dmi',
@@ -163,27 +97,3 @@
 
 /obj/item/weapon/gun/energy/lasgun/lasrifle/xray
 	fire_delay = 0.4 SECONDS
-
-// TE Standard MG
-
-/obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_mlaser
-	icon_state = "tem"
-	item_state = "tem"
-	greyscale_config = null
-	colorable_allowed = NONE
-	item_icons = list(
-		slot_l_hand_str = 'icons/mob/items_lefthand_1.dmi',
-		slot_r_hand_str = 'icons/mob/items_righthand_1.dmi',
-		)
-
-/datum/lasrifle/energy_mg_mode/standard
-	icon_state = "tem"
-
-/datum/lasrifle/energy_mg_mode/standard/burst
-	icon_state = "tem"
-
-/datum/lasrifle/heavy_laser/burst
-	icon_state = "heavylaser"
-
-/datum/lasrifle/heavy_laser/ricochet
-	icon_state = "heavylaser"
