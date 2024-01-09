@@ -4,10 +4,10 @@
 
 	// Sanity checks
 	if(!maxHealth)
-		stack_trace("[src] called handle_regular_hud_updates() while having [maxHealth] maxHealth.")
+		stack_trace("[src] called handle_regular_health_hud_updates() while having [maxHealth] maxHealth.")
 		return
 	if(!xeno_caste.plasma_max)
-		stack_trace("[src] called handle_regular_hud_updates() while having [xeno_caste.plasma_max] xeno_caste.plasma_max.")
+		stack_trace("[src] called handle_regular_health_hud_updates() while having [xeno_caste.plasma_max] xeno_caste.plasma_max.")
 		return
 
 	// Health Hud
@@ -77,5 +77,4 @@
 
 /mob/living/carbon/xenomorph/updatehealth()
 	. = ..()
-
 	handle_regular_health_hud_updates()
