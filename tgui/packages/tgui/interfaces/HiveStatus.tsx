@@ -231,8 +231,8 @@ const GeneralInfo = (_props) => {
               hive_psy_points < 600
                 ? 'bad'
                 : hive_psy_points < 800
-                ? 'average'
-                : 'good'
+                  ? 'average'
+                  : 'good'
             }
           >
             {' ' + hive_psy_points + ' '}
@@ -496,8 +496,8 @@ const PopulationPyramid = (_props) => {
             tier === 2
               ? hive_max_tier_two
               : 0 + tier === 3
-              ? hive_max_tier_three
-              : 0;
+                ? hive_max_tier_three
+                : 0;
           const TierSlots = (_props) => {
             return (
               <Box
@@ -669,8 +669,8 @@ const XenoList = (_props) => {
           sortingBy.category !== props.text
             ? 'chevron-right'
             : sortingBy.down
-            ? 'chevron-down'
-            : 'chevron-up'
+              ? 'chevron-down'
+              : 'chevron-up'
         }
         onClick={() =>
           setSortBy({
