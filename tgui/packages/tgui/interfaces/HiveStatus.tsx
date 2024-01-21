@@ -114,7 +114,8 @@ export const HiveStatus = (_props) => {
     <Window
       theme="xeno"
       title={hive_name + ' Hive Status'}
-      width={1200}
+      resizable
+      width={1000}
       height={800}
     >
       <Window.Content scrollable>
