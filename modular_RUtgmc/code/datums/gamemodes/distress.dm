@@ -31,7 +31,8 @@
 
 /datum/game_mode/infestation/distress/post_setup()
 	. = ..()
-	SSpoints.add_psy_points(XENO_HIVE_NORMAL, 2 * SILO_PRICE + 4 * XENO_TURRET_PRICE)
+	SSpoints.add_strategic_psy_points(XENO_HIVE_NORMAL, 1600)
+	SSpoints.add_tactical_psy_points(XENO_HIVE_NORMAL, 400)
 
 	for(var/obj/effect/landmark/corpsespawner/corpse AS in GLOB.corpse_landmarks_list)
 		corpse.create_mob()
