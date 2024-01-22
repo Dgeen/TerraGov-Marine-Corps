@@ -31,12 +31,15 @@
 	return ..()
 
 /datum/action/ability/activable/sectoid/mindmeld/can_use_action()
+	. = ..()
+	if(!.)
+		return
 	var/mob/living/carbon/carbon_owner = owner
 	if(melded_mob)
 		return FALSE
 	if(HAS_TRAIT(carbon_owner, TRAIT_MINDMELDED))
 		return FALSE
-	return ..()
+	return TRUE
 
 /datum/action/ability/activable/sectoid/mindmeld/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()

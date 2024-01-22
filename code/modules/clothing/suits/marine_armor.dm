@@ -334,6 +334,17 @@
 	icon_state = "commissar_coat"
 	item_state = "commissar_coat"
 	soft_armor = list(MELEE = 75, BULLET = 60, LASER = 55, ENERGY = 40, BOMB = 45, BIO = 15, FIRE = 40, ACID = 40)
+	allowed = list(
+		/obj/item/weapon/gun,
+		/obj/item/instrument,
+		/obj/item/storage/belt/sparepouch,
+		/obj/item/storage/holster/blade,
+		/obj/item/weapon/claymore,
+		/obj/item/storage/holster/belt,
+		/obj/item/storage/belt/knifepouch,
+		/obj/item/weapon/twohanded,
+		/obj/item/tool/pickaxe/plasmacutter,
+	)
 
 /*===========================U.S.L================================*/
 
