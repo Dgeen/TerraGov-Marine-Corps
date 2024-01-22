@@ -1275,10 +1275,10 @@ to_chat will check for valid clients itself already so no need to double check f
 
 /mob/living/carbon/xenomorph/warrior/Corrupted
 	hivenumber = XENO_HIVE_CORRUPTED
-
+/* RU TGMC EDIT
 /mob/living/carbon/xenomorph/wraith/Corrupted
 	hivenumber = XENO_HIVE_CORRUPTED
-
+RU TGMC EDIT */
 /mob/living/carbon/xenomorph/king/Corrupted
 	hivenumber = XENO_HIVE_CORRUPTED
 
@@ -1353,10 +1353,10 @@ to_chat will check for valid clients itself already so no need to double check f
 
 /mob/living/carbon/xenomorph/warrior/Alpha
 	hivenumber = XENO_HIVE_ALPHA
-
+/* RU TGMC EDIT
 /mob/living/carbon/xenomorph/wraith/Alpha
 	hivenumber = XENO_HIVE_ALPHA
-
+RU TGMC EDIT */
 /mob/living/carbon/xenomorph/king/Alpha
 	hivenumber = XENO_HIVE_ALPHA
 
@@ -1428,10 +1428,10 @@ to_chat will check for valid clients itself already so no need to double check f
 
 /mob/living/carbon/xenomorph/warrior/Beta
 	hivenumber = XENO_HIVE_BETA
-
+/* RU TGMC EDIT
 /mob/living/carbon/xenomorph/wraith/Beta
 	hivenumber = XENO_HIVE_BETA
-
+RU TGMC EDIT */
 /mob/living/carbon/xenomorph/king/Beta
 	hivenumber = XENO_HIVE_BETA
 
@@ -1503,10 +1503,10 @@ to_chat will check for valid clients itself already so no need to double check f
 
 /mob/living/carbon/xenomorph/warrior/Zeta
 	hivenumber = XENO_HIVE_ZETA
-
+/* RU TGMC EDIT
 /mob/living/carbon/xenomorph/wraith/Zeta
 	hivenumber = XENO_HIVE_ZETA
-
+RU TGMC EDIT */
 /mob/living/carbon/xenomorph/king/Zeta
 	hivenumber = XENO_HIVE_ZETA
 
