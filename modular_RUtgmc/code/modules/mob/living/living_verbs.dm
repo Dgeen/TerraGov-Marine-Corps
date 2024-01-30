@@ -1,4 +1,5 @@
-/mob/living/proc/lay_down()
+///Handles trying to toggle resting state
+/mob/living/proc/toggle_resting()
 	set name = "Rest"
 	set category = "IC"
 
@@ -6,11 +7,11 @@
 		if(is_ventcrawling)
 			return FALSE
 		set_resting(TRUE, FALSE)
-	else if(do_actions)
-		to_chat(src, span_warning("You are still in the process of standing up."))
 		return
-	else if(do_after(src, 2 SECONDS, IGNORE_LOC_CHANGE|IGNORE_HELD_ITEM, src))
-		get_up()
+	if(do_actions)
+		balloon_alert(src, "Busy!")
+		return
+	get_up()
 
 /mob/living/proc/get_up()
 	set_resting(FALSE, FALSE)

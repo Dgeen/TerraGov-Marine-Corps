@@ -46,7 +46,7 @@ GLOBAL_LIST_INIT(leader_gear_listed_products, list(
 		/obj/item/storage/backpack/marine/radiopack = list(CAT_LEDSUP, "Radio Pack", 5, "orange"),
 		/obj/item/fulton_extraction_pack = list(CAT_LEDSUP, "Fulton Extraction Pack", 5, "orange"),
 		/obj/item/explosive/plastique = list(CAT_LEDSUP, "Plastique explosive", 2, "orange"),
-		/obj/item/beacon/supply_beacon = list(CAT_LEDSUP, "Supply beacon", 5, "blue"),
+		/obj/item/supply_beacon = list(CAT_LEDSUP, "Supply beacon", 5, "blue"),
 		/obj/item/beacon/orbital_bombardment_beacon = list(CAT_LEDSUP, "Orbital beacon", 5, "blue"),
 		/obj/item/deployable_camera = list(CAT_LEDSUP, "Deployable Overwatch Camera", 1, "blue"),
 		/obj/item/storage/holster/blade/officer/valirapier/full = list(CAT_LEDSUP, "Vali Harvester rapier", 25, "blue"),
@@ -94,7 +94,7 @@ GLOBAL_LIST_INIT(leader_gear_listed_products, list(
 
 GLOBAL_LIST_INIT(commander_gear_listed_products, list(
 		/obj/effect/vendor_bundle/commander = list(CAT_ESS, "Essential FC Set", 0, "white"),
-		/obj/item/beacon/supply_beacon = list(CAT_FCSUP, "Supply beacon", 5, "blue"),
+		/obj/item/supply_beacon = list(CAT_FCSUP, "Supply beacon", 5, "blue"),
 		/obj/item/beacon/orbital_bombardment_beacon = list(CAT_FCSUP, "Orbital beacon", 5, "blue"),
 		/obj/item/fulton_extraction_pack = list(CAT_FCSUP, "Fulton Extraction Pack", 5, "blue"),
 		/obj/item/deployable_camera = list(CAT_FCSUP, "Deployable Overwatch Camera", 1, "blue"),

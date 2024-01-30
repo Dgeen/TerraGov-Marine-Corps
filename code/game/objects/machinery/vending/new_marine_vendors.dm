@@ -735,8 +735,8 @@
 /obj/effect/vendor_bundle/leader
 	gear_to_spawn = list(
 		/obj/item/explosive/plastique,
-		/obj/item/beacon/supply_beacon,
-		/obj/item/beacon/supply_beacon,
+		/obj/item/supply_beacon,
+		/obj/item/supply_beacon,
 		//RUTGMC EDIT ADDITION BEGIN - ORBITAL_BEACON
 		/obj/item/beacon/orbital_bombardment_beacon,
 		//RUTGMC EDIT ADDITION END
@@ -750,7 +750,7 @@
 /obj/effect/vendor_bundle/commander
 	gear_to_spawn = list(
 		/obj/item/explosive/plastique,
-		/obj/item/beacon/supply_beacon,
+		/obj/item/supply_beacon,
 		//RUTGMC EDIT ADDITION BEGIN - ORBITAL_BEACON
 		/obj/item/beacon/orbital_bombardment_beacon,
 		//RUTGMC EDIT ADDITION END

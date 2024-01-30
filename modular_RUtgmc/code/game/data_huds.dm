@@ -11,7 +11,7 @@
 
 	if(stat != DEAD)
 		var/jellyjuice_amount = reagents.get_reagent_amount(/datum/reagent/medicine/xenojelly)
-		var/medicalnanites_amount = reagents.get_reagent_amount(/datum/reagent/medicine/research/medicalnanites)
+		var/medicalnanites_amount = reagents.get_reagent_amount(/datum/reagent/medicalnanites)
 		if(medicalnanites_amount > 25)
 			xeno_reagent.overlays += medicalnanites_high_image
 		else if(medicalnanites_amount > 15)
@@ -45,8 +45,8 @@
 	if(stat == DEAD)
 		if(HAS_TRAIT(src, TRAIT_UNDEFIBBABLE ))
 			return TRUE
-		if(!client)
-			var/mob/dead/observer/ghost = get_ghost()
+		if(!mind)
+			var/mob/dead/observer/ghost = get_ghost(TRUE)
 			if(!ghost?.can_reenter_corpse)
 				return TRUE
 		if(istype(wear_ear, /obj/item/radio/headset/mainship))

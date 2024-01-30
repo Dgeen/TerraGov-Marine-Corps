@@ -468,6 +468,9 @@
 			/obj/item/ammo_magazine/smg/standard_smg = -1,
 			/obj/item/weapon/gun/smg/standard_machinepistol = 5,
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
+			/obj/item/weapon/gun/smg/standard_heavysmg = -1,
+			/obj/item/ammo_magazine/smg/standard_heavysmg = -1,
+			/obj/item/ammo_magazine/smg/standard_heavysmg/hollowpoint = -1,
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
@@ -694,6 +697,9 @@
 			/obj/item/ammo_magazine/smg/standard_smg = -1,
 			/obj/item/weapon/gun/smg/standard_machinepistol = 5,
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
+			/obj/item/weapon/gun/smg/standard_heavysmg = -1,
+			/obj/item/ammo_magazine/smg/standard_heavysmg = -1,
+			/obj/item/ammo_magazine/smg/standard_heavysmg/hollowpoint = -1,
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
@@ -904,6 +910,9 @@
 			/obj/item/ammo_magazine/smg/standard_smg = -1,
 			/obj/item/weapon/gun/smg/standard_machinepistol = -1,
 			/obj/item/ammo_magazine/smg/standard_machinepistol = -1,
+			/obj/item/weapon/gun/smg/standard_heavysmg = -1,
+			/obj/item/ammo_magazine/smg/standard_heavysmg = -1,
+			/obj/item/ammo_magazine/smg/standard_heavysmg/hollowpoint = -1,
 		),
 		"Marksman" = list(
 			/obj/item/weapon/gun/rifle/standard_dmr = -1,
@@ -1110,7 +1119,7 @@
 	products = list(
 		"Surplus Special Equipment" = list(
 			/obj/item/pinpointer = 1,
-			/obj/item/beacon/supply_beacon = 1,
+			/obj/item/supply_beacon = 1,
 			/obj/item/ammo_magazine/rifle/autosniper = 3,
 			/obj/item/ammo_magazine/rifle/tx8 = 3,
 			/obj/item/ammo_magazine/rocket/sadar = 3,
