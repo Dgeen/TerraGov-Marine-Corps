@@ -1,4 +1,4 @@
-/mob/living/attack_facehugger(mob/living/carbon/xenomorph/facehugger/F, damage_amount = F.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
+/mob/living/attack_facehugger(mob/living/carbon/xenomorph/facehugger/F, damage_amount = F.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = F.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(F.status_flags & INCORPOREAL)
 		return FALSE
 	switch(F.a_intent)

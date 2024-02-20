@@ -1,4 +1,4 @@
-/obj/machinery/atmospherics/components/unary/vent_scrubber/attack_facehugger(mob/living/carbon/xenomorph/facehugger/F, damage_amount = F.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = 0, isrightclick = FALSE)
+/obj/machinery/atmospherics/components/unary/vent_scrubber/attack_facehugger(mob/living/carbon/xenomorph/facehugger/F, damage_amount = F.xeno_caste.melee_damage, damage_type = BRUTE, damage_flag = "", effects = TRUE, armor_penetration = F.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(F.status_flags & INCORPOREAL)
 		return
 	if(!welded || !(do_after(F, 3 SECONDS, FALSE, src, BUSY_ICON_HOSTILE)))

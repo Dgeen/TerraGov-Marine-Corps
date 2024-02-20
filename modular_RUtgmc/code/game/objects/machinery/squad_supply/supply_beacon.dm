@@ -55,7 +55,7 @@
 	activated = TRUE
 	anchored = TRUE
 	w_class = WEIGHT_CLASS_GIGANTIC
-	layer = ABOVE_FLY_LAYER
+	layer = ABOVE_OBJ_LAYER
 	set_light(2, 1)
 	playsound(src, 'sound/machines/twobeep.ogg', 15, 1)
 	H.visible_message("[H] activates [src].",

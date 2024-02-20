@@ -99,7 +99,7 @@
 		D.silicon_lock_airlocks(TRUE)
 		to_chat(user, span_warning("We have overriden the shuttle lockdown!"))
 		playsound(user, "alien_roar", 50)
-		priority_announce("Normandy lockdown protocol compromised. Interference preventing remote control", "Dropship Lock Alert")
+		priority_announce("Normandy lockdown protocol compromised. Interference preventing remote control.", "Dropship Lock Alert", type = ANNOUNCEMENT_PRIORITY, color_override = "red")
 		return FALSE
 	if(D.mode != SHUTTLE_IDLE && D.mode != SHUTTLE_RECHARGING)
 		to_chat(user, span_warning("The bird's mind is currently active. We need to wait until it's more vulnerable..."))
@@ -117,77 +117,3 @@
 		to_chat(user, span_warning("There's too many tallhosts still on the ground. They interfere with our psychic field. We must dispatch them before we are able to do this."))
 		return FALSE
 	return TRUE
-
-/obj/machinery/computer/shuttle/marine_dropship/Topic(href, href_list)
-	var/obj/docking_port/mobile/marine_dropship/M = SSshuttle.getShuttle(shuttleId)
-	if(!M)
-		return
-	if(!isxeno(usr) && M.hijack_state == HIJACK_STATE_CALLED_DOWN)
-		to_chat(usr, span_warning("The shuttle isn't responding to commands."))
-		return
-	. = ..()
-	if(.)
-		return
-	if(M.hijack_state == HIJACK_STATE_CRASHING)
-		return
-
-	if(ishuman(usr) || isAI(usr))
-		if(!allowed(usr))
-			return
-		if(href_list["lockdown"])
-
-		else if(href_list["release"])
-
-		else if(href_list["lock"])
-			M.lockdown_airlocks(href_list["lock"])
-		else if(href_list["unlock"])
-			M.unlock_airlocks(href_list["unlock"])
-		return
-
-	if(!is_ground_level(M.z))
-		return
-
-	if(!isxeno(usr))
-		return
-
-	var/mob/living/carbon/xenomorph/X = usr
-
-	if(href_list["hijack"])
-		if(!(X.hive.hive_flags & HIVE_CAN_HIJACK))
-			to_chat(X, span_warning("Our hive lacks the psychic prowess to hijack the bird."))
-			return
-		switch(M.mode)
-			if(SHUTTLE_RECHARGING)
-				to_chat(X, span_xenowarning("The bird is still cooling down."))
-				return
-			if(SHUTTLE_IDLE) //Continue.
-			else
-				to_chat(X, span_xenowarning("We can't do that right now."))
-				return
-		var/confirm = tgui_alert(usr, "Would you like to hijack the metal bird?", "Hijack the bird?", list("Yes", "No"))
-		if(confirm != "Yes")
-			return
-		var/obj/docking_port/stationary/marine_dropship/crash_target/CT = pick(SSshuttle.crash_targets)
-		if(!CT)
-			return
-		do_hijack(M, CT, X)
-
-	if(href_list["abduct"])
-		var/groundside_humans
-		for(var/N in GLOB.alive_human_list)
-			var/mob/H = N
-			if(H.z != X.z)
-				continue
-			groundside_humans++
-
-		if(groundside_humans > 5)
-			to_chat(X, span_xenowarning("There is still prey left to hunt!"))
-			return
-
-		var/confirm = tgui_alert(usr, "Would you like to capture the metal bird?\n THIS WILL END THE ROUND", "Capture the ship?", list( "Yes", "No"))
-		if(confirm != "Yes")
-			return
-		priority_announce("The Normandy has been captured! Losing their main mean of accessing the ground, the marines have no choice but to retreat.", title = "NORMANDY CAPTURED")
-		var/datum/game_mode/infestation/infestation_mode = SSticker.mode
-		infestation_mode.round_stage = INFESTATION_DROPSHIP_CAPTURED_XENOS
-		return
