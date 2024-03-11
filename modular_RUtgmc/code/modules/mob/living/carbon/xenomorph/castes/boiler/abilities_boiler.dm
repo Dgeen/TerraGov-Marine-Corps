@@ -12,7 +12,7 @@
 	ability_cost = 150
 	cooldown_duration = 180 SECONDS
 	keybind_flags = ABILITY_KEYBIND_USE_ABILITY |ABILITY_IGNORE_SELECTED_ABILITY
-	use_state_flags = ABILITY_USE_STAGGERED|ABILITY_USE_ROOTED
+	use_state_flags = ABILITY_USE_STAGGERED
 	keybinding_signals = list(
 		KEYBINDING_NORMAL = COMSIG_XENOABILITY_DUMP_ACID,
 	)
@@ -28,11 +28,6 @@
 
 	caster.visible_message(span_xenodanger("[caster] emits an acid!"),
 	span_xenodanger("You dump your acid, disabling your offensive abilities to escape!"))
-/*
-	var/datum/action/ability/activable/xeno/bombard/bombard_action = caster.actions_by_path[/datum/action/ability/activable/xeno/bombard]
-	if(HAS_TRAIT_FROM(caster, TRAIT_IMMOBILE, BOILER_ROOTED_TRAIT))
-		bombard_action.set_rooted(FALSE)
-*/
 	dispense_gas()
 
 	var/datum/action/ability/activable/xeno/spray_acid = caster.actions_by_path[/datum/action/ability/activable/xeno/spray_acid/line/boiler]

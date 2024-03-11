@@ -86,5 +86,4 @@
 	scatter_unwielded = 6 // Not exactly small weapon, and recoil blowback is only for vertical recoil
 
 	movement_acc_penalty_mult = 0.1
-	upper_akimbo_accuracy = 5
-	lower_akimbo_accuracy = 5
+	akimbo_scatter_mod = 10

@@ -31,44 +31,46 @@
 	var/mob/living/carbon/xenomorph/caster = owner
 	caster.pass_flags = initial(caster.pass_flags)
 	caster.icon_state = "[caster.xeno_caste.caste_name] Walking"
-	UnregisterSignal(owner, list(COMSIG_XENO_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_XENO_LIVING_THROW_HIT))
+	UnregisterSignal(owner, list(COMSIG_XENO_OBJ_THROW_HIT, COMSIG_MOVABLE_POST_THROW, COMSIG_XENOMORPH_LEAP_BUMP))
 
 /datum/action/ability/activable/xeno/pounce_hugger/proc/obj_hit(datum/source, obj/target, speed)
 	SIGNAL_HANDLER
 	target.hitby(owner, speed)
 	pounce_complete()
 
-/datum/action/ability/activable/xeno/pounce_hugger/proc/mob_hit(datum/source, mob/living/M)
+/datum/action/ability/activable/xeno/pounce_hugger/proc/mob_hit(datum/source, mob/living/living_target)
 	SIGNAL_HANDLER
-	if(M.stat || isxeno(M))
+	. = TRUE
+	if(living_target.stat || isxeno(living_target)) //we leap past xenos
 		return
 
 	var/mob/living/carbon/xenomorph/facehugger/caster = owner
 
-	caster.visible_message(span_danger("[caster] leaps on [M]!"),
-				span_xenodanger("We leap on [M]!"), null, 5)
+	caster.visible_message(span_danger("[caster] leaps on [living_target]!"),
+				span_xenodanger("We leap on [living_target]!"), null, 5)
 	playsound(caster.loc, 'sound/voice/alien_roar_larva3.ogg', 25, TRUE) //TODO: I NEED ACTUAL HUGGERS SOUND DAMMED
 
-	if(ishuman(M) && (M.dir in reverse_nearby_direction(caster.dir)))
-		var/mob/living/carbon/human/H = M
-		if(!H.check_shields(COMBAT_TOUCH_ATTACK, 30, "melee"))
-			caster.Paralyze(6 SECONDS)
-			caster.set_throwing(FALSE) //Reset throwing manually.
-			return COMPONENT_KEEP_THROWING
+	if(ishuman(living_target) && (angle_to_dir(Get_Angle(caster.throw_source, living_target)) in reverse_nearby_direction(living_target.dir)))
+		var/mob/living/carbon/human/human_target = living_target
+		if(!human_target.check_shields(COMBAT_TOUCH_ATTACK, 30, "melee"))
+			caster.Paralyze(XENO_POUNCE_SHIELD_STUN_DURATION)
+			caster.set_throwing(FALSE)
+			return
 
-	caster.forceMove(get_turf(M))
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
+	trigger_pounce_effect(living_target)
+	pounce_complete()
+
+///Triggers the effect of a successful pounce on the target.
+/datum/action/ability/activable/xeno/pounce_hugger/proc/trigger_pounce_effect(mob/living/living_target)
+	var/mob/living/carbon/xenomorph/facehugger/caster = owner
+	caster.forceMove(get_turf(living_target))
+	if(ishuman(living_target))
+		var/mob/living/carbon/human/H = living_target
 		if(get_dist(start_turf, H) <= HUG_RANGE) //Check whether we hugged the target or just knocked it down
 			caster.try_attach(H)
 		else
-			if(victim_paralyze_time)
-				H.Paralyze(victim_paralyze_time)
-
-			if(freeze_on_hit_time)
-				caster.Immobilize(freeze_on_hit_time)
-
-	pounce_complete()
+			H.Paralyze(victim_paralyze_time)
+			caster.Immobilize(freeze_on_hit_time)
 
 /datum/action/ability/activable/xeno/pounce_hugger/can_use_ability(atom/A, silent = FALSE, override_flags)
 	. = ..()
@@ -86,11 +88,6 @@
 	if(owner.buckled)
 		owner.buckled.unbuckle_mob(owner)
 
-/datum/action/ability/activable/xeno/pounce_hugger/on_cooldown_finish()
-	var/mob/living/carbon/xenomorph/caster = owner
-	caster.usedPounce = FALSE
-	return ..()
-
 /datum/action/ability/activable/xeno/pounce_hugger/use_ability(atom/A)
 	var/mob/living/carbon/xenomorph/caster = owner
 
@@ -104,12 +101,12 @@
 	span_xenowarning("We leap at [A]!"))
 
 	RegisterSignal(caster, COMSIG_XENO_OBJ_THROW_HIT, PROC_REF(obj_hit))
-	RegisterSignal(caster, COMSIG_XENO_LIVING_THROW_HIT, PROC_REF(mob_hit))
+	RegisterSignal(caster, COMSIG_XENOMORPH_LEAP_BUMP, PROC_REF(mob_hit))
 	RegisterSignal(caster, COMSIG_MOVABLE_POST_THROW, PROC_REF(pounce_complete))
 
 	succeed_activate()
 	add_cooldown()
-	caster.usedPounce = TRUE // this is needed for throwing code
+	caster.xeno_flags |= XENO_LEAPING
 	caster.pass_flags |= PASS_LOW_STRUCTURE|PASS_FIRE
 	caster.pass_flags ^= PASS_MOB
 

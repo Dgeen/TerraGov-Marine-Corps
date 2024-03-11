@@ -557,7 +557,7 @@
 			/obj/item/explosive/grenade/incendiary = 50,
 			/obj/item/explosive/grenade/smokebomb = 25,
 			/obj/item/explosive/grenade/smokebomb/cloak = 25,
-			/obj/item/explosive/grenade/smokebomb/antigas = 10,
+			/obj/item/explosive/grenade/smokebomb/antigas = 20,
 			/obj/item/explosive/grenade/sticky/cloaker = 25,
 			/obj/item/explosive/grenade/smokebomb/drain = 25,
 			/obj/item/explosive/grenade/mirage = 100,

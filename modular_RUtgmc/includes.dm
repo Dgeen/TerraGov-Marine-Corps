@@ -226,7 +226,6 @@
 #include "code\modules\mob\living\carbon\xenomorph\castes\warlock\castedatum_warlock.dm"
 #include "code\modules\mob\living\carbon\xenomorph\castes\warrior\abilities_warrior.dm"
 #include "code\modules\mob\living\carbon\xenomorph\castes\warrior\castedatum_warrior.dm"
-#include "code\modules\mob\living\silicon\ai\ai.dm"
 #include "code\modules\organs\limb_objects.dm"
 #include "code\modules\power\fusion_engine.dm"
 #include "code\modules\power\groundmap_geothermal.dm"

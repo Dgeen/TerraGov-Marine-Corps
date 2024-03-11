@@ -280,7 +280,7 @@ MEDICAL
 /datum/supply_packs/medical/defibrillator_gloves
 	name = "Advanced defibrillator medical gloves"
 	notes = "contains advanced defibrillator medical gloves."
-	contains = list(/obj/item/defibrillator/gloves)
+	contains = list(/obj/item/clothing/gloves/defibrillator)
 	cost = 300
 	containertype = /obj/structure/closet/crate/secure/surgery
 	access = ACCESS_MARINE_MEDBAY

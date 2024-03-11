@@ -347,7 +347,7 @@
 		else
 			clear_fullscreen("remote_view", 0)
 
-/* RUTGMC DELETION
+
 /mob/living/silicon/ai/update_sight()
 	if(HAS_TRAIT(src, TRAIT_SEE_IN_DARK))
 		see_in_dark = max(see_in_dark, 8)
@@ -359,7 +359,7 @@
 	lighting_alpha = initial(lighting_alpha)
 	eyeobj.see_in_dark = initial(eyeobj.see_in_dark)
 	eyeobj.lighting_alpha = initial(eyeobj.lighting_alpha)
-	return ..()*/
+	return ..()
 
 /mob/living/silicon/ai/get_status_tab_items()
 	. = ..()
