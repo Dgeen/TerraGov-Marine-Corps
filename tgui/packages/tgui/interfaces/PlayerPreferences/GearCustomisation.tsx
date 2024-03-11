@@ -12,6 +12,7 @@ export const GearCustomization = (props) => {
     10: 'Head',
     8: 'Eyewear',
     9: 'Mouth',
+    17: 'Other',
     20: 'Miscellaneous',
   };
 
@@ -26,7 +27,7 @@ export const GearCustomization = (props) => {
 
   const currentPoints = gear.reduce(
     (total, name) => total + gearsets[name]?.cost,
-    0,
+    0
   );
 
   return (
@@ -93,6 +94,30 @@ export const GearCustomization = (props) => {
               ))}
             </LabeledList>
           </Section>
+          <Stack.Item grow>
+            <Section title={'Other'}>
+              <LabeledList>
+                {bySlot['Other']?.map((item) => (
+                  <LabeledList.Item
+                    key={item.name}
+                    label={`${item.name}
+                  (${item.cost})`}
+                  >
+                    <Button.Checkbox
+                      inline
+                      content={'Equipped'}
+                      checked={gear.includes(item.name)}
+                      onClick={() =>
+                        gear.includes(item.name)
+                          ? act('loadoutremove', { gear: item.name })
+                          : act('loadoutadd', { gear: item.name })
+                      }
+                    />
+                  </LabeledList.Item>
+                ))}
+              </LabeledList>
+            </Section>
+          </Stack.Item>
         </Stack.Item>
       </Stack>
       <Stack>
