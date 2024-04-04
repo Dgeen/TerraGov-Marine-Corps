@@ -17,7 +17,7 @@
 	fire_animation = "coltrifle_fire"
 	fire_sound = 'sound/weapons/guns/fire/mateba.ogg'
 	gun_skill_category = SKILL_RIFLES
-	flags_equip_slot = ITEM_SLOT_BACK
+	equip_slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	caliber = CALIBER_44LS
 	max_chamber_items = 8

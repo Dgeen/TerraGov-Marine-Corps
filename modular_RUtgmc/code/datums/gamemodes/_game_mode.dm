@@ -3,7 +3,7 @@
 	blacklist_ground_maps = list(MAP_DELTA_STATION, MAP_WHISKEY_OUTPOST, MAP_OSCAR_OUTPOST, MAP_FORT_PHOBOS)
 
 /datum/game_mode/post_setup()
-	if(flags_round_type & MODE_SILO_RESPAWN)
+	if(round_type_flags & MODE_SILO_RESPAWN)
 		var/datum/hive_status/normal/HN = GLOB.hive_datums[XENO_HIVE_NORMAL]
 		HN.RegisterSignals(SSdcs, list(COMSIG_GLOB_OPEN_TIMED_SHUTTERS_LATE, COMSIG_GLOB_OPEN_SHUTTERS_EARLY), TYPE_PROC_REF(/datum/hive_status/normal, set_siloless_collapse_timer))
 	return ..()

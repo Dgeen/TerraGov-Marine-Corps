@@ -33,7 +33,7 @@
 	movement_acc_penalty_mult = 6
 	aim_fire_delay = 1 SECONDS
 
-	flags_gun_features = GUN_CAN_POINTBLANK|GUN_ENERGY|GUN_AMMO_COUNTER|GUN_NO_PITCH_SHIFT_NEAR_EMPTY|GUN_AMMO_COUNT_BY_SHOTS_REMAINING|GUN_WIELDED_FIRING_ONLY
+	gun_features_flags = GUN_CAN_POINTBLANK|GUN_ENERGY|GUN_AMMO_COUNTER|GUN_NO_PITCH_SHIFT_NEAR_EMPTY|GUN_AMMO_COUNT_BY_SHOTS_REMAINING|GUN_WIELDED_FIRING_ONLY
 
 	attachable_allowed = list(
 		/obj/item/attachable/bayonet,
@@ -46,7 +46,6 @@
 		/obj/item/attachable/motiondetector,
 		/obj/item/attachable/buildasentry,
 		/obj/item/weapon/gun/rifle/pepperball/pepperball_mini,
-		/obj/item/attachable/shoulder_mount,
 		/obj/item/attachable/gyro,
 		/obj/item/attachable/verticalgrip,
 		/obj/item/attachable/angledgrip,

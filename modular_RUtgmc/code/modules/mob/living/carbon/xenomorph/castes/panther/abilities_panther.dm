@@ -101,7 +101,7 @@
 	if(!.)
 		return FALSE
 
-	if(get_dist_euclide_square(A, owner) > 64) //8 tiles range
+	if(get_dist_euclidean_square(A, owner) > 64) //8 tiles range
 		if(!silent)
 			to_chat(owner, span_xenonotice("You are too far!"))
 		return FALSE
@@ -351,7 +351,7 @@
 /datum/action/ability/xeno_action/evasive_maneuvers/proc/evasion_flamer_hit(datum/source, obj/projectile/proj)
 	SIGNAL_HANDLER
 
-	if((proj.ammo.flags_ammo_behavior & AMMO_FLAME)) //If it's not from a flamethrower, we don't care
+	if((proj.ammo.ammo_behavior_flags & AMMO_FLAME)) //If it's not from a flamethrower, we don't care
 		to_chat(owner, span_danger("The searing fire compromises our ability to dodge!"))
 		evasion_deactivate()
 
@@ -435,7 +435,7 @@
 	if(R.issamexenohive(proj.firer)) //We automatically dodge allied projectiles at no cost, and no benefit to our evasion stacks
 		return COMPONENT_PROJECTILE_DODGE
 
-	if(proj.ammo.flags_ammo_behavior & AMMO_FLAME) //We can't dodge literal fire
+	if(proj.ammo.ammo_behavior_flags & AMMO_FLAME) //We can't dodge literal fire
 		return FALSE
 
 	evasion_dodge_sfx(proj)

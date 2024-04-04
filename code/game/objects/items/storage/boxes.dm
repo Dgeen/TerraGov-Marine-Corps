@@ -235,7 +235,7 @@
 	icon_state = "matchbox"
 	item_state = "zippo"
 	w_class = WEIGHT_CLASS_TINY
-	flags_equip_slot = ITEM_SLOT_BELT
+	equip_slot_flags = ITEM_SLOT_BELT
 	spawn_type = /obj/item/tool/match
 	spawn_number = 14
 
@@ -668,7 +668,7 @@
 		/obj/item/ammo_magazine/smg,
 		/obj/item/ammo_magazine/sniper,
 		/obj/item/ammo_magazine/standard_gpmg,
-		/obj/item/ammo_magazine/tl102,
+		/obj/item/ammo_magazine/hsg_102,
 		/obj/item/ammo_magazine/standard_lmg,
 		/obj/item/ammo_magazine/standard_mmg,
 		/obj/item/ammo_magazine/heavymachinegun,
@@ -1148,9 +1148,9 @@
 /obj/item/storage/box/visual/grenade/phosphorus
 	name = "\improper M40 HPDP grenade box"
 	desc = "A secure box holding 15 M40 HPDP white phosphorous grenades. War crimes for the entire platoon!"
-	storage_slots = 15
+	storage_slots = 25
 	max_storage_space = 30
-	spawn_number = 15
+	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/phosphorus
 	closed_overlay = "grenade_box_overlay_phosphorus"
 
@@ -1192,9 +1192,9 @@
 /obj/item/storage/box/visual/grenade/razorburn
 	name = "razorburn grenade box"
 	desc = "A secure box holding 15 razor burn grenades. Used for quick flank coverage."
-	storage_slots = 15
+	storage_slots = 25
 	max_storage_space = 30
-	spawn_number = 15
+	spawn_number = 25
 	spawn_type = /obj/item/explosive/grenade/chem_grenade/razorburn_small
 	closed_overlay = "grenade_box_overlay_razorburn"
 

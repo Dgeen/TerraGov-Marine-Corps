@@ -16,7 +16,7 @@
 	bullet_color = COLOR_SOFT_RED //Red bullets to indicate friendly fire restriction
 	hud_state = "smartgun"
 	hud_state_empty = "smartgun_empty"
-	flags_ammo_behavior = AMMO_BALLISTIC
+	ammo_behavior_flags = AMMO_BALLISTIC
 	accurate_range = 20
 	damage = 20
 	penetration = 10
@@ -26,7 +26,7 @@
 	name = "submachinegun ACP bullet"
 	hud_state = "smg"
 	hud_state_empty = "smg_empty"
-	flags_ammo_behavior = AMMO_BALLISTIC
+	ammo_behavior_flags = AMMO_BALLISTIC
 	accuracy_var_low = 7
 	accuracy_var_high = 7
 	damage = 20
@@ -104,7 +104,7 @@
 	damage = 100
 	penetration = 80
 	accurate_range_min = 6
-	flags_ammo_behavior = AMMO_ENERGY|AMMO_HITSCAN|AMMO_SNIPER
+	ammo_behavior_flags = AMMO_ENERGY|AMMO_HITSCAN|AMMO_SNIPER
 	sundering = 10
 	hitscan_effect_icon = "beam_heavy_charge"
 	bullet_color = COLOR_DISABLER_BLUE
@@ -138,7 +138,7 @@
 	name = "shotgun slug"
 	handful_icon_state = "shotgun slug"
 	hud_state = "shotgun_slug"
-	flags_ammo_behavior = AMMO_BALLISTIC
+	ammo_behavior_flags = AMMO_BALLISTIC
 	shell_speed = 3
 	max_range = 15
 	damage = 100
@@ -154,7 +154,7 @@
 	handful_icon_state = "incendiary slug"
 	hud_state = "shotgun_fire"
 	damage_type = BRUTE
-	flags_ammo_behavior = AMMO_BALLISTIC|AMMO_INCENDIARY
+	ammo_behavior_flags = AMMO_BALLISTIC|AMMO_INCENDIARY
 	max_range = 15
 	damage = 70
 	penetration = 15
@@ -169,7 +169,7 @@
 	handful_icon_state = "shotgun flechette shell"
 	icon_state = "flechette"
 	hud_state = "shotgun_flechette"
-	flags_ammo_behavior = AMMO_BALLISTIC
+	ammo_behavior_flags = AMMO_BALLISTIC
 	bonus_projectiles_type = /datum/ammo/bullet/shotgun/flechette/flechette_spread/shq6
 	bonus_projectiles_amount = 2
 	bonus_projectiles_scatter = 3

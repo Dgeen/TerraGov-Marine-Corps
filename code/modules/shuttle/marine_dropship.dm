@@ -93,7 +93,7 @@
 /obj/docking_port/stationary/marine_dropship/lz1/Initialize(mapload)
 	. = ..()
 	var/area/area = get_area(src)
-	area.flags_area |= MARINE_BASE
+	area.area_flags |= MARINE_BASE
 
 /obj/docking_port/stationary/marine_dropship/lz1/prison
 	name = "LZ1: Main Hangar"
@@ -105,7 +105,7 @@
 /obj/docking_port/stationary/marine_dropship/lz2/Initialize(mapload)
 	. = ..()
 	var/area/area = get_area(src)
-	area.flags_area |= MARINE_BASE
+	area.area_flags |= MARINE_BASE
 
 /obj/docking_port/stationary/marine_dropship/lz2/prison
 	name = "LZ2: Civ Residence Hangar"
@@ -495,6 +495,7 @@
 	resistance_flags = RESIST_ALL
 	req_one_access = list(ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_LEADER) // TLs can only operate the remote console
 	possible_destinations = "lz1;lz2;alamo"
+	opacity = FALSE
 
 /obj/machinery/computer/shuttle/marine_dropship/attack_alien(mob/living/carbon/xenomorph/xeno_attacker, damage_amount = xeno_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = xeno_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	var/datum/game_mode/infestation/infestation_mode = SSticker.mode //Minor QOL, any xeno can check the console after a leader hijacks
@@ -507,11 +508,11 @@
 	#endif
 	var/obj/docking_port/mobile/marine_dropship/shuttle = SSshuttle.getShuttle(shuttleId)
 	if(shuttle.hijack_state != HIJACK_STATE_CALLED_DOWN && shuttle.hijack_state != HIJACK_STATE_CRASHING) //Process of corrupting the controls
-		to_chat(xeno_attacker, span_xenowarning("We corrupt the bird's controls, unlocking the doors[(shuttle.mode != SHUTTLE_IGNITING) ? "and preventing it from flying." : ", but we are unable to prevent it from flying as it is already taking off!"]"))
+		to_chat(xeno_attacker, span_xenowarning("We corrupt the bird's controls, unlocking the doors and preventing it from flying."))
 		SEND_GLOBAL_SIGNAL(COMSIG_GLOB_DROPSHIP_CONTROLS_CORRUPTED, src)
-		if(shuttle.mode != SHUTTLE_IGNITING)
-			shuttle.set_hijack_state(HIJACK_STATE_CALLED_DOWN)
-			shuttle.do_start_hijack_timer()
+		shuttle.set_idle()
+		shuttle.set_hijack_state(HIJACK_STATE_CALLED_DOWN)
+		shuttle.do_start_hijack_timer()
 	interact(xeno_attacker) //Open the UI
 
 /obj/machinery/computer/shuttle/marine_dropship/ui_state(mob/user)
@@ -684,7 +685,7 @@
 
 /obj/machinery/computer/shuttle/marine_dropship/proc/do_hijack(obj/docking_port/mobile/marine_dropship/crashing_dropship, obj/docking_port/stationary/marine_dropship/crash_target/crash_target, mob/living/carbon/xenomorph/user)
 	crashing_dropship.set_hijack_state(HIJACK_STATE_CRASHING)
-	if(SSticker.mode?.flags_round_type & MODE_HIJACK_POSSIBLE)
+	if(SSticker.mode?.round_type_flags & MODE_HIJACK_POSSIBLE)
 		var/datum/game_mode/infestation/infestation_mode = SSticker.mode
 		infestation_mode.round_stage = INFESTATION_MARINE_CRASHING
 	crashing_dropship.callTime = 120 * (GLOB.current_orbit/3) SECONDS
@@ -697,7 +698,7 @@
 	user.hive.on_shuttle_hijack(crashing_dropship)
 	playsound(src, 'sound/misc/queen_alarm.ogg')
 	crashing_dropship.silicon_lock_airlocks(TRUE)
-	SSevacuation.flags_scuttle &= ~FLAGS_SDEVAC_TIMELOCK
+	SSevacuation.scuttle_flags &= ~FLAGS_SDEVAC_TIMELOCK
 	switch(SSshuttle.moveShuttleToDock(shuttleId, crash_target, TRUE))
 		if(0)
 			visible_message("Shuttle departing. Please stand away from the doors.")
@@ -713,7 +714,6 @@
 	name = "\improper 'Alamo' flight controls"
 	desc = "The flight controls for the 'Alamo' Dropship. Named after the Alamo Mission, stage of the Battle of the Alamo in the United States' state of Texas in the Spring of 1836. The defenders held to the last, encouraging other Texians to rally to the flag."
 	possible_destinations = "lz1;lz2;alamo"
-	opacity = FALSE
 
 /* RUTGMC DELETION
 /obj/machinery/computer/shuttle/marine_dropship/one/Initialize(mapload)
@@ -744,6 +744,12 @@
 
 /turf/open/shuttle/dropship/floor/alt
 	icon_state = "rasputin14"
+
+/turf/open/shuttle/dropship/floor/corners
+	icon_state = "rasputin16"
+
+/turf/open/shuttle/dropship/floor/out
+	icon_state = "rasputin17"
 
 /obj/machinery/door/airlock/multi_tile/mainship/dropshiprear/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	. = ..()

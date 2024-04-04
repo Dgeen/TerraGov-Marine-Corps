@@ -8,18 +8,18 @@
 	if(!ishuman(user))
 		return
 
-	switch(flags_inv_hide)
+	switch(inv_hide_flags)
 		if(HAIR_SEMI_HIDDEN)
-			flags_inv_hide = HAIR_FULLY_HIDDEN
+			inv_hide_flags = HAIR_FULLY_HIDDEN
 			user.balloon_alert(user, "Fully hiding hair")
 		if(HAIR_FULLY_HIDDEN)
-			flags_inv_hide = HAIR_NOT_HIDDEN
+			inv_hide_flags = HAIR_NOT_HIDDEN
 			user.balloon_alert(user, "Revealing hair entirely")
 		if(HAIR_NOT_HIDDEN)
-			flags_inv_hide = HAIR_ONLY_BEARD
+			inv_hide_flags = HAIR_ONLY_BEARD
 			user.balloon_alert(user, "Hiding only upper hair")
 		if(HAIR_ONLY_BEARD)
-			flags_inv_hide = HAIR_SEMI_HIDDEN
+			inv_hide_flags = HAIR_SEMI_HIDDEN
 			user.balloon_alert(user, "Partially hiding hair")
 
 /obj/item/clothing/head/modular/examine(mob/user)

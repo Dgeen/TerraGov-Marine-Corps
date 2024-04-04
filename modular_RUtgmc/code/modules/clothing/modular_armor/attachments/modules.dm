@@ -10,7 +10,7 @@
 	icon = 'modular_RUtgmc/icons/mob/modular/modular_armor_modules.dmi'
 	icon_state = "mod_head_scanner"
 	item_state = "mod_head_scanner_a"
-	flags_attach_features = ATTACH_REMOVABLE|ATTACH_ACTIVATION|ATTACH_APPLY_ON_MOB
+	attach_features_flags = ATTACH_REMOVABLE|ATTACH_ACTIVATION|ATTACH_APPLY_ON_MOB
 	slot = ATTACHMENT_SLOT_HEAD_MODULE
 	prefered_slot = SLOT_HEAD
 
