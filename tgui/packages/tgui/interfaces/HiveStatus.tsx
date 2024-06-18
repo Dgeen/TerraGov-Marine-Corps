@@ -26,6 +26,7 @@ type InputPack = {
   hive_strategic_psy_points: number;
   hive_tactical_psy_points: number;
   hive_orphan_collapse: number;
+  hive_silo_max: number;
   hive_orphan_max: number;
   hive_minion_count: number;
   hive_primos: PrimoUpgrades[];
@@ -218,6 +219,7 @@ const GeneralInfo = (_props) => {
     hive_tactical_psy_points,
     hive_orphan_collapse,
     hive_death_timers,
+    hive_silo_max,
     hive_orphan_max,
   } = data;
 
@@ -233,8 +235,8 @@ const GeneralInfo = (_props) => {
               hive_strategic_psy_points < 600
                 ? 'bad'
                 : hive_strategic_psy_points < 800
-                  ? 'average'
-                  : 'good'
+                ? 'average'
+                : 'good'
             }
           >
             {' ' + hive_strategic_psy_points + ' '}
@@ -246,8 +248,8 @@ const GeneralInfo = (_props) => {
               hive_tactical_psy_points < 100
                 ? 'bad'
                 : hive_tactical_psy_points < 300
-                  ? 'average'
-                  : 'good'
+                ? 'average'
+                : 'good'
             }
           >
             {' ' + hive_tactical_psy_points + ' '}
@@ -267,6 +269,14 @@ const GeneralInfo = (_props) => {
           <EvolutionBar />
         </Flex.Item>
         <DeadXenoTimerCountdowns hive_death_timers={hive_death_timers} />
+        <Flex.Item>
+          <XenoCountdownBar
+            time={hive_silo_collapse}
+            max={hive_silo_max}
+            tooltip="Hive must construct a silo!"
+            left_side="Silo Collapse:"
+          />
+        </Flex.Item>
         <Flex.Item>
           <XenoCountdownBar
             time={hive_orphan_collapse}
@@ -511,8 +521,8 @@ const PopulationPyramid = (_props) => {
             tier === 2
               ? hive_max_tier_two
               : 0 + tier === 3
-                ? hive_max_tier_three
-                : 0;
+              ? hive_max_tier_three
+              : 0;
           const TierSlots = (_props) => {
             return (
               <Box
@@ -684,8 +694,8 @@ const XenoList = (_props) => {
           sortingBy.category !== props.text
             ? 'chevron-right'
             : sortingBy.down
-              ? 'chevron-down'
-              : 'chevron-up'
+            ? 'chevron-down'
+            : 'chevron-up'
         }
         onClick={() =>
           setSortBy({

@@ -313,6 +313,7 @@
 	H.handle_regular_hud_updates()
 	H.updatehealth() //One more time, so it doesn't show the target as dead on HUDs
 	H.dead_ticks = 0 //We reset the DNR time
+	H.initial_stage = 0 // RUTGMC ADDITION
 
 	//Checks if our "patient" is wearing a camera. Then it turns it on if it's off.
 	if(istype(H.wear_ear, /obj/item/radio/headset/mainship))

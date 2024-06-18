@@ -1,3 +1,4 @@
+/* RU TGMC EDIT
 // ***************************************
 // *********** Stealth
 // ***************************************
@@ -249,6 +250,7 @@
 	if(!xenoowner.plasma_stored)
 		to_chat(xenoowner, span_xenodanger("We lack sufficient plasma to remain disguised."))
 		cancel_stealth()
+RU TGMC EDIT */
 
 // ***************************************
 // *********** Hunter's Pounce
@@ -347,6 +349,20 @@
 /datum/action/ability/activable/xeno/pounce/proc/reset_pass_flags()
 	var/mob/living/carbon/xenomorph/xeno_owner = owner
 	xeno_owner.pass_flags = initial(xeno_owner.pass_flags)
+
+/datum/action/ability/activable/xeno/pounce/ai_should_start_consider()
+	return TRUE
+
+/datum/action/ability/activable/xeno/pounce/ai_should_use(atom/target)
+	if(!iscarbon(target))
+		return FALSE
+	if(!line_of_sight(owner, target, pounce_range))
+		return FALSE
+	if(!can_use_ability(target, override_flags = ABILITY_IGNORE_SELECTED_ABILITY))
+		return FALSE
+	if(target.get_xeno_hivenumber() == owner.get_xeno_hivenumber())
+		return FALSE
+	return TRUE
 
 /datum/action/ability/activable/xeno/pounce/ai_should_start_consider()
 	return TRUE

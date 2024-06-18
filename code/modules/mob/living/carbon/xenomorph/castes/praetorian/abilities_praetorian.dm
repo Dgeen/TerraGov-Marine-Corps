@@ -7,7 +7,7 @@
 	desc = "Spray a cone of dangerous acid at your target."
 	ability_cost = 300
 	cooldown_duration = 40 SECONDS
-
+/* RU TGMC EDIT //Overwritten in modular_RUtgmc\code\modules\mob\living\carbon\xenomorph\castes\praetorian\abilities_praetorian.dm
 /datum/action/ability/activable/xeno/spray_acid/cone/use_ability(atom/A)
 	var/mob/living/carbon/xenomorph/X = owner
 	var/turf/target = get_turf(A)
@@ -40,7 +40,7 @@
 	if(QDELETED(spraying_xeno))
 		return
 	spraying_xeno.remove_movespeed_modifier(type)
-
+RU TGMC EDIT */
 /datum/action/ability/activable/xeno/spray_acid/ai_should_start_consider()
 	return TRUE
 
@@ -125,16 +125,16 @@ GLOBAL_LIST_INIT(acid_spray_hit, typecacheof(list(/obj/structure/barricade, /obj
 
 
 // ***************************************
-// *********** Acid dash
+// *********** Dash
 // ***************************************
 /datum/action/ability/activable/xeno/charge/acid_dash
 	name = "Acid Dash"
 	action_icon_state = "pounce"
-	desc = "Instantly dash, tackling the first marine in your path. If you manage to tackle someone, gain another weaker cast of the ability."
-	ability_cost = 250
-	cooldown_duration = 30 SECONDS
+	desc = "Instantly dash to the selected tile."
+	ability_cost = 100
+	cooldown_duration = 10 SECONDS
 	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_XENOABILITY_ACID_DASH,
+		KEYBINDING_NORMAL = COMSIG_XENOABILITY_DASH,
 	)
 	charge_range = PRAE_CHARGEDISTANCE
 	///Can we use the ability again

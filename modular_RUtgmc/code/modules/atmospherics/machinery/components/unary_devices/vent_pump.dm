@@ -1,3 +1,6 @@
+/obj/machinery/atmospherics/components/unary/vent_pump
+	flags_atom = null
+
 /obj/machinery/atmospherics/components/unary/vent_pump/attack_facehugger(mob/living/carbon/xenomorph/facehugger/facehugger_attacker, damage_amount = facehugger_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = facehugger_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(facehugger_attacker.status_flags & INCORPOREAL)
 		return

@@ -784,7 +784,8 @@
 #define COMSIG_XENOABILITY_TRANSFER_PLASMA "xenoability_transfer_plasma"
 #define COMSIG_XENOABILITY_CORROSIVE_ACID "xenoability_corrosive_acid"
 #define COMSIG_XENOABILITY_SPRAY_ACID "xenoability_spray_acid"
-#define COMSIG_XENOABILITY_ACID_DASH "xenoability_acid_dash"
+#define COMSIG_XENOABILITY_DASH "xenoability_dash"
+#define COMSIG_XENOABILITY_SHORT_SPRAY_ACID "xenoability_short_spray_acid"
 #define COMSIG_XENOABILITY_XENO_SPIT "xenoability_xeno_spit"
 #define COMSIG_XENOABILITY_HIDE "xenoability_hide"
 #define COMSIG_XENOABILITY_NEUROTOX_STING "xenoability_neurotox_sting"
@@ -833,9 +834,10 @@
 #define COMSIG_XENOABILITY_CARNAGE "xenoability_carnage"
 #define COMSIG_XENOABILITY_FEAST "xenoability_feast"
 
-#define COMSIG_XENOABILITY_BULLCHARGE "xenoability_bullcharge"
+#define COMSIG_XENOABILITY_ACIDCHARGE "xenoability_acidcharge"
 #define COMSIG_XENOABILITY_BULLHEADBUTT "xenoability_bullheadbutt"
 #define COMSIG_XENOABILITY_BULLGORE "xenoability_bullgore"
+#define COMSIG_XENOABILITY_TOLERATE "xenoability_bulltolerate"
 
 #define COMSIG_XENOABILITY_TAIL_SWEEP "xenoability_tail_sweep"
 #define COMSIG_XENOABILITY_FORWARD_CHARGE "xenoability_forward_charge"
@@ -937,8 +939,9 @@
 #define COMSIG_XENOABILITY_PSYCHIC_SHIELD "xenoability_psychic_shield"
 #define COMSIG_XENOABILITY_TRIGGER_PSYCHIC_SHIELD "xenoability_trigger_psychic_shield"
 #define COMSIG_XENOABILITY_PSYCHIC_BLAST "xenoability_psychic_blast"
+#define COMSIG_XENOABILITY_TOGGLE_WARLOCK_ZOOM "xenoability_toggle_warlock_zoom"
 #define COMSIG_XENOABILITY_PSYCHIC_CRUSH "xenoability_psychic_crush"
-
+/* RU TGMC EDIT
 #define COMSIG_XENOABILITY_TENDRILS "xenoability_tendrils"
 #define COMSIG_XENOABILITY_ORGANICBOMB "xenoability_puppeteerorganicbomb"
 #define COMSIG_XENOABILITY_PUPPET "xenoability_puppet"
@@ -946,8 +949,12 @@
 #define COMSIG_XENOABILITY_DREADFULPRESENCE "xenoability_dreadfulpresence"
 #define COMSIG_XENOABILITY_PINCUSHION "xenoability_pincushion"
 #define COMSIG_XENOABILITY_FLAY "xenoability_flay"
-#define COMSIG_XENOABILITY_SENDORDERS "xenoability_sendorders"
+#define COMSIG_XENOABILITY_SENDORDERS_RADIAL "xenoability_sendorders_radial"
+#define COMSIG_XENOABILITY_ATTACKORDER "xenoability_attackorder"
+#define COMSIG_XENOABILITY_RECALLORDER "xenoability_recallorder"
 #define COMSIG_XENOABILITY_BESTOWBLESSINGS "xenoability_giveblessings"
+RU TGMC EDIT */
+#define COMSIG_XENOABILITY_BANELING_EXPLODE "xenoability_baneling_explode"
 
 #define COMSIG_XENOABILITY_BEHEMOTH_ROLL "xenoability_behemoth_roll"
 #define COMSIG_XENOABILITY_LANDSLIDE "xenoability_landslide"
@@ -1092,11 +1099,11 @@
 #define COMSIG_SPIDERLING_GUARD "spiderling_guard"
 #define COMSIG_SPIDERLING_UNGUARD "spiderling_unguard"
 */
-
+/* RU TGMC EDIT
 //puppet
 #define COMSIG_PUPPET_CHANGE_ORDER "puppetchangeorder"
 #define COMSIG_PUPPET_CHANGE_ALL_ORDER "puppetglobalorder"
-
+RU TGMC EDIT */
 #define COMSIG_CAVE_INTERFERENCE_CHECK "cave_interference_check" //! Cave comms interference check signal.
 
 //Campaign signals

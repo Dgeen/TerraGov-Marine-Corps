@@ -129,6 +129,7 @@
 	holder.icon_state = "xenohealth[amount]"
 
 
+/* RUTGMC MOVED TO MODULE
 /mob/living/carbon/human/med_hud_set_health()
 	var/image/holder = hud_list[HEALTH_HUD]
 	if(stat == DEAD)
@@ -175,6 +176,7 @@
 			holder.icon_state = "hudhealth-50"
 		else
 			holder.icon_state = "hudhealth-100"
+*/
 
 
 /mob/proc/med_hud_set_status() //called when mob stat changes, or get a virus/xeno host, etc
@@ -185,6 +187,7 @@
 	hud_set_pheromone()
 
 
+/* RUTGMC MOVED TO MODULE
 /mob/living/carbon/human/med_hud_set_status()
 	var/image/status_hud = hud_list[STATUS_HUD] //Status for med-hud.
 	var/image/infection_hud = hud_list[XENO_EMBRYO_HUD] //State of the xeno embryo.
@@ -372,6 +375,7 @@
 					simple_status_hud.icon_state = ""
 					status_hud.icon_state = "hudhealthy"
 					return TRUE
+*/
 
 #define HEALTH_RATIO_PAIN_HUD 1
 #define PAIN_RATIO_PAIN_HUD 0.25
@@ -382,6 +386,7 @@
 	return
 
 
+/* RUTGMC MOVED TO MODULE
 /mob/living/carbon/human/med_pain_set_perceived_health()
 	if(species?.species_flags & IS_SYNTHETIC)
 		return FALSE
@@ -407,6 +412,7 @@
 		holder.icon_state = "hudhealth-50"
 
 	return TRUE
+*/
 
 //infection status that appears on humans and monkeys, viewed by xenos only.
 /datum/atom_hud/xeno_infection
@@ -522,7 +528,7 @@
 		return
 	for(var/aura_type in GLOB.pheromone_images_list)
 		if(emitted_auras.Find(aura_type))
-			holder.overlays += image('icons/mob/hud.dmi', src, "hudaura[aura_type]")
+			holder.overlays += image('modular_RUtgmc/icons/mob/hud.dmi', src, "hudaura[aura_type]") //RUTGMC EDIT .dmi
 
 /mob/living/carbon/xenomorph/proc/hud_set_queen_overwatch()
 	var/image/holder = hud_list[QUEEN_OVERWATCH_HUD]
@@ -533,7 +539,7 @@
 			if(hive.living_xeno_queen.observed_xeno == src)
 				holder.icon_state = "queen_overwatch"
 			if(xeno_flags & XENO_LEADER)
-				var/image/I = image('icons/mob/hud.dmi',src, "hudxenoleader")
+				var/image/I = image('modular_RUtgmc/icons/mob/hud.dmi',src, "hudxenoleader") //RUTGMC EDIT .dmi
 				holder.overlays += I
 	hud_list[QUEEN_OVERWATCH_HUD] = holder
 

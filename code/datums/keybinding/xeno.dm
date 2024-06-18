@@ -212,6 +212,13 @@
 // Single caste, alphabetical order
 //
 
+/datum/keybinding/xeno/long_range_sight
+	name = "long_range_sight"
+	full_name = "Boiler: Long Range Sight"
+	description = "Toggles the zoom in."
+	keybind_signal = COMSIG_XENOABILITY_LONG_RANGE_SIGHT
+	hotkey_keys = list("E")
+
 /datum/keybinding/xeno/toggle_bomb
 	name = "toggle_bomb"
 	full_name = "Boiler: Toggle Bombard Type"
@@ -239,17 +246,17 @@
 	keybind_signal = COMSIG_XENOABILITY_BOMBARD
 	hotkey_keys = list("R")
 
-/datum/keybinding/xeno/plow_charge
-	name = "plow_charge"
-	full_name = "Bull: Plow Charge"
-	description = "A charge that plows through the victims."
-	keybind_signal = COMSIG_XENOABILITY_BULLCHARGE
+/datum/keybinding/xeno/acid_charge
+	name = "acid_charge"
+	full_name = "Bull: Acid charge"
+	description = "A charge that leaves acid puddles."
+	keybind_signal = COMSIG_XENOABILITY_ACIDCHARGE
 	hotkey_keys = list("Q")
 
 /datum/keybinding/xeno/headbutt_charge
 	name = "headbutt_charge"
 	full_name = "Bull: Headbutt Charge"
-	description = "A charge that tosses the victim forward or backwards, depending on intent."
+	description = "A charge that tosses the victim forward."
 	keybind_signal = COMSIG_XENOABILITY_BULLHEADBUTT
 	hotkey_keys = list("F")
 
@@ -260,6 +267,12 @@
 	keybind_signal = COMSIG_XENOABILITY_BULLGORE
 	hotkey_keys = list("R")
 
+/datum/keybinding/xeno/tolerate
+	name = "tolerate"
+	full_name = "Bull: Tolerate"
+	description = "Become resistant to slowdown, stagger and stuns"
+	keybind_signal = COMSIG_XENOABILITY_TOLERATE
+	hotkey_keys = list("F")
 /datum/keybinding/xeno/throw_hugger
 	name = "throw_hugger"
 	full_name = "Carrier: Throw Hugger"
@@ -654,11 +667,11 @@
 	description = "Summons all xenos in a hive to the caller's location, uses all plasma to activate."
 	keybind_signal = COMSIG_XENOABILITY_HIVE_SUMMON
 
-/datum/keybinding/xeno/acid_dash
-	name = "acid_dash"
-	full_name = "Praetorian: Acid Dash"
-	description = "Quickly dash, leaving acid in your path and knocking down the first marine hit. Has reset potential."
-	keybind_signal = COMSIG_XENOABILITY_ACID_DASH
+/datum/keybinding/xeno/dash
+	name = "dash"
+	full_name = "Praetorian: Dash"
+	description = "Quickly dash forward."
+	keybind_signal = COMSIG_XENOABILITY_DASH
 	hotkey_keys = list("E")
 
 /datum/keybinding/xeno/screech
@@ -871,6 +884,13 @@
 	keybind_signal = COMSIG_XENOABILITY_PSYCHIC_BLAST
 	hotkey_keys = list("R")
 
+/datum/keybinding/xeno/toggle_warlock_zoom
+	name="Warlock Zoom"
+	full_name = "Warlock: Toggle Zoom"
+	description = "Zoom out for a larger view around wherever you are looking"
+	keybind_signal = COMSIG_XENOABILITY_TOGGLE_WARLOCK_ZOOM
+	hotkey_keys = list("F")
+
 /datum/keybinding/xeno/psychic_crush
 	name = "Psychic Crush"
 	full_name = "Warlock: Psychic Crush"
@@ -1035,7 +1055,7 @@
 	keybind_signal = COMSIG_XENOABILITY_TIMESTOP
 	hotkey_keys = list("V")
 RU TGMC EDIT END*/
-
+/*RU TGMC EDIT PUPPETEER REMOVAL
 /datum/keybinding/xeno/flay
 	name = "Flay"
 	full_name = "Puppeteer: Flay"
@@ -1078,23 +1098,37 @@ RU TGMC EDIT END*/
 	description = "Burrow freshly created tendrils to tangle organics in a 3x3 patch."
 	keybind_signal = COMSIG_XENOABILITY_TENDRILS
 
-/datum/keybinding/xeno/send_orders_puppet
-	name = "Give Orders to Puppets"
-	full_name = "Puppeteer: Give Orders to Puppets"
+/datum/keybinding/xeno/send_orders_puppet_radial
+	name = "Give Orders to Puppets: Radial"
+	full_name = "Puppeteer: Give Orders to Puppets (Radial)"
 	description = "Give orders to your puppets, altering their behaviour."
-	keybind_signal = COMSIG_XENOABILITY_SENDORDERS
+	keybind_signal = COMSIG_XENOABILITY_SENDORDERS_RADIAL
+
+/datum/keybinding/xeno/send_attack_order_puppet
+	name = "Give attack order"
+	full_name = "Puppeteer: Give Attack Order"
+	description = "Give your puppets order to attack"
+	keybind_signal = COMSIG_XENOABILITY_ATTACKORDER
+
+/datum/keybinding/xeno/send_recall_orders_puppet
+	name = "Give recall order"
+	full_name = "Puppeteer: Give Recall Order"
+	description = "Give your puppets order to recall"
+	keybind_signal = COMSIG_XENOABILITY_RECALLORDER
 
 /datum/keybinding/xeno/bestow_blessing
 	name = "Bestow Blessings"
 	full_name = "Puppeteer: Bestow Blessings"
 	description = "Give blessings to your puppets."
 	keybind_signal = COMSIG_XENOABILITY_BESTOWBLESSINGS
-
+RU TGMC EDIT PUPPETEER REMOVAL*/
+/* RUTGMC DELETION
 /datum/keybinding/xeno/behemoth_roll
 	name = "Roll"
 	full_name = "Behemoth: Roll"
 	description = "Curl up into a ball, sacrificing some offensive capabilities in exchange for greater movement speed."
 	keybind_signal = COMSIG_XENOABILITY_BEHEMOTH_ROLL
+*/
 
 /datum/keybinding/xeno/landslide
 	name = "Landslide"

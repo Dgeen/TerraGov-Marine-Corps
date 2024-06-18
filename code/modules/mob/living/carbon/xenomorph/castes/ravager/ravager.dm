@@ -22,10 +22,13 @@
 // ***************************************
 // *********** Mob overrides
 // ***************************************
+
 /mob/living/carbon/xenomorph/ravager/flamer_fire_act(burnlevel)
 	. = ..()
 	if(stat)
 		return
+	if(pass_flags & PASS_FIRE) // RUTGMC ADDITION START
+		return FALSE // RUTGMC ADDITION END
 	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_RAVAGER_FLAMER_ACT))
 		return FALSE
 	gain_plasma(50)

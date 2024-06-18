@@ -6,6 +6,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	atom_flags = CONDUCT
 	equip_slot_flags = ITEM_SLOT_MASK
+	actions_types = list(/datum/action/item_action) // RUTGMC ADDITION
 
 	var/volume = 60
 	/// The range in tiles which whistle makes people warcry

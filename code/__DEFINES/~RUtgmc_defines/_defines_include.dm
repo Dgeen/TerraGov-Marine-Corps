@@ -3,6 +3,7 @@
 #include "footsteps.dm"
 #include "is_helpers.dm"
 #include "jobs.dm"
+#include "loadout_variants.dm"
 #include "mobs.dm"
 #include "mode.dm"
 #include "modular_armor.dm"
@@ -13,3 +14,5 @@
 #include "calibers.dm"
 #include "skills.dm"
 #include "loadout.dm"
+#include "preferences.dm"
+#include "objects.dm"

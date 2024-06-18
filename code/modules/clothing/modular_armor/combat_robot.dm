@@ -106,6 +106,9 @@
 		/obj/item/armor_module/armor/visor/marine/robot,
 		/obj/item/armor_module/armor/visor/marine/robot/light,
 		/obj/item/armor_module/armor/visor/marine/robot/heavy,
+		//RUTGMC EDIT ADDITION  BEGIN - MOTION_DETECTOR
+		/obj/item/armor_module/module/motion_detector,
+		//RUTGMC EDIT ADDITION  END
 	)
 	starting_attachments = list(/obj/item/armor_module/storage/helmet, /obj/item/armor_module/armor/visor/marine/robot)
 	item_map_variant_flags = ITEM_JUNGLE_VARIANT|ITEM_ICE_VARIANT|ITEM_DESERT_VARIANT

@@ -6,17 +6,17 @@
 
 ///List of globs, keyed by icon state. Used for radial selection.
 GLOBAL_LIST_INIT(boiler_glob_list, list(
-		BOILER_GLOB_NEURO = /datum/ammo/xeno/boiler_gas,
+//		BOILER_GLOB_NEURO = /datum/ammo/xeno/boiler_gas, RU TGMC EDIT
 		BOILER_GLOB_ACID = /datum/ammo/xeno/boiler_gas/corrosive,
-		BOILER_GLOB_NEURO_LANCE = /datum/ammo/xeno/boiler_gas/lance,
+//		BOILER_GLOB_NEURO_LANCE = /datum/ammo/xeno/boiler_gas/lance, RU TGMC EDIT
 		BOILER_GLOB_ACID_LANCE = /datum/ammo/xeno/boiler_gas/corrosive/lance,
 		))
 
 ///List of glob action button images, used for radial selection.
 GLOBAL_LIST_INIT(boiler_glob_image_list, list(
-		BOILER_GLOB_NEURO = image('icons/Xeno/actions.dmi', icon_state = BOILER_GLOB_NEURO),
+//		BOILER_GLOB_NEURO = image('icons/Xeno/actions.dmi', icon_state = BOILER_GLOB_NEURO), RU TGMC EDIT
 		BOILER_GLOB_ACID = image('icons/Xeno/actions.dmi', icon_state = BOILER_GLOB_ACID),
-		BOILER_GLOB_NEURO_LANCE = image('icons/Xeno/actions.dmi', icon_state = BOILER_GLOB_NEURO_LANCE),
+//		BOILER_GLOB_NEURO_LANCE = image('icons/Xeno/actions.dmi', icon_state = BOILER_GLOB_NEURO_LANCE), RU TGMC EDIT
 		BOILER_GLOB_ACID_LANCE = image('icons/Xeno/actions.dmi', icon_state = BOILER_GLOB_ACID_LANCE),
 		))
 
@@ -45,8 +45,9 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 			span_notice("We start focusing your sight to look off into the distance."), null, 5)
 		if(!do_after(X, 1 SECONDS, IGNORE_HELD_ITEM, null, BUSY_ICON_GENERIC) || (X.xeno_flags & XENO_ZOOMED))
 			return
-		X.zoom_in(11)
+		X.zoom_in(4.5) //RU TGMC EDIT
 		..()
+
 
 // ***************************************
 // *********** Gas type toggle

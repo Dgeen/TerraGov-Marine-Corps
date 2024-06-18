@@ -292,6 +292,7 @@
 /mob/living/carbon/xenomorph/slip(slip_source_name, stun_level, weaken_level, run_only, override_noslip, slide_steps)
 	return FALSE
 
+/* RUTGMC DELETION, DRAG SLOWDOWN FIX
 /mob/living/carbon/xenomorph/start_pulling(atom/movable/AM, force = move_force, suppress_message = TRUE, bypass_crit_delay = FALSE)
 	if(do_actions)
 		return FALSE //We are already occupied with something.
@@ -314,6 +315,7 @@
 	do_attack_animation(L, ATTACK_EFFECT_GRAB)
 	SEND_SIGNAL(src, COMSIG_XENOMORPH_GRAB)
 	return ..()
+*/
 
 /mob/living/carbon/xenomorph/stop_pulling()
 	if(ishuman(pulling))
@@ -414,11 +416,14 @@
 
 /mob/living/carbon/xenomorph/Moved(atom/old_loc, movement_dir)
 	if(xeno_flags & XENO_ZOOMED)
-		zoom_out()
+		if(!can_walk_zoomed)
+			zoom_out()
 	handle_weeds_on_movement()
 	return ..()
 
 /mob/living/carbon/xenomorph/CanAllowThrough(atom/movable/mover, turf/target)
+	if(mover.pass_flags & PASS_XENO) // RUTGMC ADDITION
+		return TRUE
 	if(mover.throwing && ismob(mover) && isxeno(mover.thrower)) //xenos can throw mobs past other xenos
 		return TRUE
 	return ..()

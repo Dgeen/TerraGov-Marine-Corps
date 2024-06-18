@@ -48,6 +48,7 @@
 #define BALLISTIC_VEST_SNOW "ballistic_vest_snow"
 
 // Each key AND value HAS to be unique.
+/* RUTGMC REDEFINITION
 ///saved loadout key = icon_state, AGAIN DO NOT EDIT THE KEYS IT WILL BREAK LOADOUTS
 GLOBAL_LIST_INIT(loadout_variant_keys, list(
 	NORMAL = "normal",
@@ -91,3 +92,4 @@ GLOBAL_LIST_INIT(loadout_variant_keys, list(
 	BALLISTIC_VEST_DESERT = "desert",
 	BALLISTIC_VEST_SNOW = "snow",
 ))
+*/

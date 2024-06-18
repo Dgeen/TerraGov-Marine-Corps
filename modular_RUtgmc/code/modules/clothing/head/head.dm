@@ -1,3 +1,8 @@
+/obj/item/clothing/head/examine(mob/user)
+	. = ..()
+	if(colorable_allowed & HAIR_CONCEALING_CHANGE_ALLOWED)
+		. += span_notice("You can change the way it conceals the hair by using <b>facepaint</b> on it.")
+
 /obj/item/clothing/head/squad_headband
 	name = "\improper Squad headband"
 	desc = "Headband made from ultra-thin special cloth. Cloth thickness provides more than just a stylish fluttering of headband. You can tie around headband onto a helmet. This squad version of a headband has secret unique features created by the cloth coloring component. "
@@ -171,7 +176,7 @@
 	soft_armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 0, ACID = 0)
 	w_class = WEIGHT_CLASS_SMALL
 
-	actions_types = list(/datum/action/item_action/toggle)
+	actions_types = list(/datum/action/item_action)
 	armor_features_flags = ARMOR_LAMP_OVERLAY|ARMOR_NO_DECAP
 	item_flags = SYNTH_RESTRICTED
 	species_exception = list(/datum/species/robot)
@@ -188,7 +193,7 @@
 		return
 	TIMER_COOLDOWN_START(user, "Banzai", 60 SECONDS)
 	if(user.gender == FEMALE)
-		user.balloon_alert(user, "Women can't use that")
+		user.balloon_alert(user, "Women can't use that!")
 	else
 		activator.say("Tenno Heika Banzai!!")
 		playsound(get_turf(user), 'modular_RUtgmc/sound/voice/banzai1.ogg', 30)

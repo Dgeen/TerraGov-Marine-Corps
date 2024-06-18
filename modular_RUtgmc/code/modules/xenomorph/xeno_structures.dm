@@ -1,3 +1,11 @@
+/obj/structure/xeno/proc/weed_removed()
+	SIGNAL_HANDLER
+	var/obj/alien/weeds/found_weed = locate(/obj/alien/weeds) in loc
+	if(found_weed.obj_integrity <= 0)
+		obj_destruction(damage_flag = MELEE)
+	else
+		obj_destruction()
+
 /obj/structure/xeno/silo
 	plane = FLOOR_PLANE
 	icon = 'modular_RUtgmc/icons/Xeno/resin_silo.dmi'
@@ -138,3 +146,25 @@
 
 	charges -= charges_used
 	update_icon()
+
+/obj/structure/xeno/xeno_turret/obj_destruction(damage_amount, damage_type, damage_flag)
+	if(damage_amount) //Spawn effects only if we actually get destroyed by damage
+		on_destruction()
+	return ..()
+
+/obj/structure/xeno/xeno_turret/proc/on_destruction()
+	var/datum/effect_system/smoke_spread/xeno/smoke = new /datum/effect_system/smoke_spread/xeno/acid(src)
+	smoke.set_up(1, get_turf(src))
+	smoke.start()
+
+/obj/structure/xeno/xeno_turret/sticky/on_destruction()
+	for(var/i = 1 to 20) // maybe a bit laggy
+		var/obj/projectile/new_proj = new(src)
+		new_proj.generate_bullet(ammo)
+		new_proj.fire_at(null, src, range = rand(1, 4), angle = rand(1, 360), recursivity = TRUE)
+
+/obj/structure/xeno/xeno_turret/hugger_turret/on_destruction()
+	for(var/i = 1 to 5)
+		var/obj/projectile/new_proj = new(src)
+		new_proj.generate_bullet(ammo)
+		new_proj.fire_at(null, src, range = rand(1, 3), angle = rand(1, 360), recursivity = TRUE)

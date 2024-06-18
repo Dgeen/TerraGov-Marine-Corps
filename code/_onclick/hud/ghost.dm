@@ -50,7 +50,7 @@
 	using.screen_loc = ui_ghost_slot2
 	static_inventory += using
 
-	using = new /atom/movable/screen/ghost/reenter_corpse(null, src)
+	using = new /atom/movable/screen/ghost/reenter_corpse()
 	using.screen_loc = ui_ghost_slot3
 	static_inventory += using
 

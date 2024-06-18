@@ -492,6 +492,7 @@ SUBSYSTEM_DEF(minimaps)
 /datum/action/minimap/action_activate()
 	. = ..()
 	if(!map)
+		to_chat(owner, span_warning("This region doesn't seem to have a minimap!"))// RUTGMC ADDITION
 		return
 	if(!locator_override && ismovableatom(owner.loc))
 		override_locator(owner.loc)
@@ -501,7 +502,7 @@ SUBSYSTEM_DEF(minimaps)
 		owner.client.screen -= locator
 		locator.UnregisterSignal(tracking, COMSIG_MOVABLE_MOVED)
 	else
-		if(locate(/atom/movable/screen/minimap) in owner.client.screen) //This seems like the most effective way to do this without some wacky code
+		if(locate(/atom/movable/screen/minimap) in owner?.client.screen) //This seems like the most effective way to do this without some wacky code // RUTGMC ADDITION, added "?"
 			to_chat(owner, span_warning("You already have a minimap open!"))
 			return
 		owner.client.screen += map
@@ -595,7 +596,10 @@ SUBSYSTEM_DEF(minimaps)
 /datum/action/minimap/proc/on_owner_z_change(atom/movable/source, oldz, newz)
 	SIGNAL_HANDLER
 	var/atom/movable/tracking = locator_override ? locator_override : owner
+	/* RUTGMC DELETION
 	if(minimap_displayed)
+	*/
+	if(locate(/atom/movable/screen/minimap) in owner?.client?.screen) // RUTGMC ADDITION
 		owner.client?.screen -= map
 	map = null
 	if(default_overwatch_level)

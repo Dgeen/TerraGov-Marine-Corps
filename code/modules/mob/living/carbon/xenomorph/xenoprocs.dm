@@ -321,7 +321,7 @@
 	update_sight()
 
 
-/mob/living/carbon/xenomorph/proc/zoom_in(tileoffset = 5, viewsize = 12)
+/mob/living/carbon/xenomorph/proc/zoom_in(tileoffset = 5, viewsize = 4.5) //RU TGMC EDIT
 	if(stat || resting)
 		if(xeno_flags & XENO_ZOOMED)
 			zoom_out()
@@ -333,7 +333,7 @@
 		return
 	zoom_turf = get_turf(src)
 	xeno_flags |= XENO_ZOOMED
-	client.view_size.set_view_radius_to(viewsize/2-2) //convert diameter to radius
+	client.view_size.set_view_radius_to(viewsize) //convert diameter to radius
 	var/viewoffset = 32 * tileoffset
 	switch(dir)
 		if(NORTH)
