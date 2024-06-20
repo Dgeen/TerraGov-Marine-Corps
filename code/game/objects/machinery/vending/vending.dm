@@ -656,14 +656,6 @@
 
 	return do_stock(item_to_stock, user, show_feedback, record)
 
-///Actually does the restock. Overridden by lasgun vendor for snowflake behaviour
-/obj/machinery/vending/proc/do_stock(obj/item/item_to_stock, mob/user, show_feedback = TRUE, datum/vending_product/record)
-	if(!record.attempt_restock(item_to_stock, user, show_feedback))
-		display_message_and_visuals(user, enable = TRUE, message = null, state = VENDING_RESTOCK_DENY)
-		return FALSE
-	display_message_and_visuals(user, show_feedback, "Restocked", VENDING_RESTOCK_ACCEPT)
-	return TRUE //Item restocked, no reason to go on.
-
 /obj/machinery/vending/lasgun/do_stock(obj/item/item_to_stock, mob/user, show_feedback = TRUE, datum/vending_product/record)
 	//Special snowflake handling of cells
 	if(!iscell(item_to_stock))
@@ -691,14 +683,6 @@
 				return FALSE
 			display_message_and_visuals(user, show_feedback, "Restocked and recharged", VENDING_RESTOCK_ACCEPT_RECHARGE)
 			return TRUE
-
-/**
- * A few checks to make sure the item we are trying to restock is allowed to be restocked
- * Then restocks it afterwards
- * Returns TRUE if we successfully restock
- */
-/datum/vending_product/proc/attempt_restock(obj/item/item_to_stock, mob/user, show_feedback = TRUE)
-	return do_stock(item_to_stock, user, show_feedback, record)
 
 ///Actually does the restock. Overridden by lasgun vendor for snowflake behaviour
 /obj/machinery/vending/proc/do_stock(obj/item/item_to_stock, mob/user, show_feedback = TRUE, datum/vending_product/record)

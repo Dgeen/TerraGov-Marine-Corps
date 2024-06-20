@@ -85,7 +85,7 @@
 /datum/action/ability/xeno_action/create_boiler_bomb/action_activate()
 	var/mob/living/carbon/xenomorph/boiler/X = owner
 
-	if(X.is_zoomed)
+	if(X.xeno_flags & XENO_ZOOMED)
 		to_chat(X, span_notice("We can not prepare globules as we are now. We must stop concentrating into the distance!"))
 		return
 

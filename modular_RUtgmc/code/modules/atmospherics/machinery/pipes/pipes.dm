@@ -1,2 +1,2 @@
 /obj/machinery/atmospherics/pipe
-	flags_atom = null
+	atom_flags = null

@@ -686,7 +686,7 @@
 		qdel(oldest_pillar)
 	update_button_icon()
 
-/* RU TGMC EDIT
+
 // ***************************************
 // *********** Seismic Fracture
 // ***************************************
@@ -694,7 +694,7 @@
 #define SEISMIC_FRACTURE_ATTACK_RADIUS 3
 #define SEISMIC_FRACTURE_ATTACK_RADIUS_ENHANCED 5
 #define SEISMIC_FRACTURE_ENHANCED_DELAY 1 SECONDS
-RU TGMC EDIT */
+
 /obj/effect/temp_visual/behemoth/seismic_fracture
 	icon = 'icons/effects/64x64.dmi'
 	icon_state = "seismic_fracture"
@@ -747,7 +747,7 @@ RU TGMC EDIT */
 		if(EAST)
 			pixel_x += 18
 			pixel_y -= 8
-/* RU TGMC EDIT //moved to modular
+
 /datum/action/ability/xeno_action/seismic_fracture
 	name = "Seismic Fracture"
 	action_icon_state = "seismic_fracture"
@@ -844,7 +844,7 @@ RU TGMC EDIT */
 	excepted_turfs += turfs_to_attack
 	iteration++
 	addtimer(CALLBACK(src, PROC_REF(do_attack_extra), origin_turf, extra_turfs, excepted_turfs, enhanced, range, iteration), SEISMIC_FRACTURE_ENHANCED_DELAY)
-RU TGMC EDIT*/
+
 
 // ***************************************
 // *********** Primal Wrath

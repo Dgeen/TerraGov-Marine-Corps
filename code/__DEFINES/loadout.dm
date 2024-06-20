@@ -750,7 +750,7 @@ GLOBAL_LIST_INIT(loadout_role_essential_set, list(
 	),
 	SQUAD_LEADER = list(
 		/obj/item/explosive/plastique = 1,
-		/obj/item/beacon/supply_beacon = 2,
+		/obj/item/supply_beacon = 2,
 		/obj/item/whistle = 1,
 		/obj/item/binoculars/tactical = 1,
 		/obj/item/pinpointer = 1,

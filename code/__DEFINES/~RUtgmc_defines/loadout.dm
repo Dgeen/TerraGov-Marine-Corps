@@ -245,7 +245,7 @@ GLOBAL_LIST_INIT(commander_gear_listed_products, list(
 
 GLOBAL_LIST_INIT(synthetic_gear_listed_products, list(
 	//command stuff
-	/obj/item/beacon/supply_beacon = list(CAT_SYNTH, "Supply beacon", 5, "blue"),
+	/obj/item/supply_beacon = list(CAT_SYNTH, "Supply beacon", 5, "blue"),
 	/obj/item/beacon/orbital_bombardment_beacon = list(CAT_SYNTH, "Orbital beacon", 5, "blue"),
 	/obj/item/fulton_extraction_pack = list(CAT_SYNTH, "Fulton Extraction Pack", 5, "blue"),
 	/obj/item/deployable_camera = list(CAT_SYNTH, "Deployable Overwatch Camera", 1, "blue"),
@@ -383,7 +383,7 @@ GLOBAL_LIST_INIT(job_specific_clothes_vendor, list(
 GLOBAL_LIST_INIT(loadout_role_essential_set, list(
 	SQUAD_ENGINEER = list (
 		/obj/item/explosive/plastique = 1,
-		/obj/item/explosive/grenade/chem_grenade/razorburn_smol = 1,
+		/obj/item/explosive/grenade/chem_grenade/razorburn_small = 1,
 		/obj/item/clothing/gloves/marine/insulated = 1,
 		/obj/item/cell/high = 1,
 		/obj/item/lightreplacer = 1,
@@ -408,7 +408,7 @@ GLOBAL_LIST_INIT(loadout_role_essential_set, list(
 	),
 	SQUAD_LEADER = list(
 		/obj/item/explosive/plastique = 1,
-		/obj/item/beacon/supply_beacon = 2,
+		/obj/item/supply_beacon = 2,
 		/obj/item/beacon/orbital_bombardment_beacon = 1,
 		/obj/item/whistle = 1,
 		/obj/item/binoculars/tactical = 1,
@@ -418,7 +418,7 @@ GLOBAL_LIST_INIT(loadout_role_essential_set, list(
 	),
 	FIELD_COMMANDER = list(
 		/obj/item/explosive/plastique = 1,
-		/obj/item/beacon/supply_beacon = 1,
+		/obj/item/supply_beacon = 1,
 		/obj/item/beacon/orbital_bombardment_beacon = 1,
 		/obj/item/healthanalyzer = 1,
 		/obj/item/roller/medevac = 1,

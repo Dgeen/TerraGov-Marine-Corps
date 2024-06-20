@@ -101,6 +101,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
  * * On selecting nothing, merely keeps current ammo.
  * * Dynamically adjusts depending on which globs a boiler has access to, provided the global lists are maintained, though this fact isn't too relevant unless someone adds more.
 **/
+/* Moved to modular
 /datum/action/ability/xeno_action/toggle_bomb/proc/select_glob_radial()
 	var/mob/living/carbon/xenomorph/boiler/X = owner
 	var/list/available_globs = list()
@@ -118,7 +119,7 @@ GLOBAL_LIST_INIT(boiler_glob_image_list, list(
 	var/datum/ammo/xeno/boiler_gas/boiler_glob = X.ammo
 	to_chat(X, span_notice(boiler_glob.select_text))
 	update_button_icon()
-
+*/
 /datum/action/ability/xeno_action/toggle_bomb/update_button_icon()
 	var/mob/living/carbon/xenomorph/boiler/X = owner
 	var/datum/ammo/xeno/boiler_gas/boiler_glob = X.ammo	//Should be safe as this always selects a ammo.

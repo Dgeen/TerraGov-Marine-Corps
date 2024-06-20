@@ -1,4 +1,5 @@
 /obj/item/reagent_containers/glass/bottle/update_icon()
+	. = ..()
 	overlays.Cut()
 
 	if(reagents?.total_volume && (icon_state == "bottle-1" || icon_state == "bottle-2" || icon_state == "bottle-3" || icon_state == "bottle-4")) //only for those who have reagentfillings icons

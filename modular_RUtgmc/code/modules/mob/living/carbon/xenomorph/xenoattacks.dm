@@ -36,7 +36,7 @@
 			if(!issamexenohive(xeno_attacker))
 				return FALSE
 
-			if(xeno_attacker.tier != XENO_TIER_FOUR && !xeno_attacker.xeno_flags & XENO_LEADER)
+			if(xeno_attacker.tier != XENO_TIER_FOUR && !(xeno_attacker.xeno_flags & XENO_LEADER))
 				return FALSE
 
 			if((isxenoqueen(src) || xeno_flags & XENO_LEADER) && !isxenoqueen(xeno_attacker))
