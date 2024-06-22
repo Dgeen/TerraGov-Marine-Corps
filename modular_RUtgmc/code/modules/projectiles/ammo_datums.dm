@@ -303,7 +303,6 @@
 	shell_speed = 2
 	bullet_color = COLOR_STRONG_VIOLET
 	damage_type = BURN
-	flags_ammo_behavior = AMMO_IGNORE_RESIST
 
 	hud_state = "plasma"
 	hud_state_empty = "electrothermal_empty"
@@ -346,7 +345,7 @@
 
 	bullet_color = COLOR_VIOLET
 	damage = 0
-	flags_ammo_behavior = AMMO_ENERGY|AMMO_IGNORE_RESIST
+	ammo_behavior_flags = AMMO_ENERGY
 
 /datum/ammo/energy/yautja/caster/stun/on_hit_mob(mob/M, obj/projectile/P)
 	var/mob/living/carbon/C = M
@@ -368,7 +367,6 @@
 /datum/ammo/energy/yautja/caster/bolt
 	name = "plasma bolt"
 	icon_state = "pulse1"
-	flags_ammo_behavior = AMMO_IGNORE_RESIST
 	bullet_color = COLOR_BRIGHT_BLUE
 	shell_speed = 3
 	damage = 35
@@ -382,7 +380,7 @@
 	hud_state = "plasma_rifle"
 
 	damage = 0
-	flags_ammo_behavior = AMMO_ENERGY|AMMO_IGNORE_RESIST
+	ammo_behavior_flags = AMMO_ENERGY
 
 /datum/ammo/energy/yautja/caster/bolt/stun/on_hit_mob(mob/M, obj/projectile/P)
 	var/mob/living/carbon/C = M
@@ -405,7 +403,7 @@
 	name = "plasma eradicator"
 	icon_state = "bluespace"
 	bullet_color = COLOR_BRIGHT_BLUE
-	flags_ammo_behavior = AMMO_EXPLOSIVE
+	ammo_behavior_flags = AMMO_TARGET_TURF
 	shell_speed = 2
 	accuracy = 40
 
@@ -433,7 +431,7 @@
 	name = "plasma immobilizer"
 	bullet_color = COLOR_MAGENTA
 	damage = 0
-	flags_ammo_behavior = AMMO_ENERGY|AMMO_IGNORE_RESIST
+	ammo_behavior_flags = AMMO_ENERGY
 	hud_state = "plasma_rifle_blast"
 	accurate_range = 20
 	max_range = 20
@@ -475,7 +473,6 @@
 	name = "plasma rifle bolt"
 	icon_state = "ion"
 	damage_type = BURN
-	flags_ammo_behavior = AMMO_IGNORE_RESIST
 
 	hud_state = "plasma_rifle"
 
@@ -491,7 +488,7 @@
 	icon_state = "buckshot_shrapnel"
 	icon = 'modular_RUtgmc/icons/obj/items/projectiles.dmi'
 	accurate_range_min = 5
-	flags_ammo_behavior = AMMO_BALLISTIC
+	ammo_behavior_flags = AMMO_BALLISTIC
 	accuracy = 15
 	accurate_range = 32
 	max_range = 8

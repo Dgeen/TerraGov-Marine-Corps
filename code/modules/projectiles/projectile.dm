@@ -915,9 +915,6 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 
 	var/feedback_flags = NONE
 
-	if(proj.shot_from && src == proj.shot_from.sniper_target(src))
-		damage *= SNIPER_LASER_DAMAGE_MULTIPLIER
-
 	if(iscarbon(proj.firer))
 		var/mob/living/carbon/shooter_carbon = proj.firer
 		if(shooter_carbon.IsStaggered())
@@ -942,7 +939,7 @@ So if we are on the 32th absolute pixel coordinate we are on tile 1, but if we a
 			feedback_flags |= (BULLET_FEEDBACK_FIRE)
 
 
-	if((proj.ammo.ammo_behavior_flags & AMMO_SUNDERING) && proj.sundering >= 20) // RUTGMC EDIT
+	if(proj.sundering >= 20) // RUTGMC EDIT
 		adjust_sunder(proj.sundering) // RUTGMC EDIT
 
 	if(stat != DEAD && proj.firer)

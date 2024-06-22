@@ -138,7 +138,7 @@
 	ammo_datum_type = /datum/ammo/energy/lasgun/marine/pistol/heat/pocket
 
 /datum/ammo/energy/lasgun/marine/pistol/heat/pocket
-	ammo_behavior_flags = AMMO_ENERGY|AMMO_INCENDIARY|AMMO_SUNDERING|AMMO_HITSCAN
+	ammo_behavior_flags = AMMO_ENERGY|AMMO_INCENDIARY|AMMO_HITSCAN
 	incendiary_strength = 15
 	hitscan_effect_icon = "beam_incen"
 	bullet_color = COLOR_LASER_RED

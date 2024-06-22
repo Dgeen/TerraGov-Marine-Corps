@@ -414,8 +414,9 @@ RU TGMC EDIT */
 #define BURST_LAYER 4 //Chestburst overlay
 #define OVERHEALTH_SHIELD_LAYER 3
 #define FIRE_LAYER 2 //If you're on fire
-#define LASER_LAYER 1 //For sniper targeting laser
 /* RU TGMC EDIT
+#define LASER_LAYER 1 //For sniper targeting laser
+
 #define TOTAL_LAYERS 27
 RU TGMC EDIT */
 #define MOTH_WINGS_BEHIND_LAYER 1

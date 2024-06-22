@@ -226,11 +226,4 @@
 /obj/item/armor_module/storage/medical/som
 	icon = 'modular_RUtgmc/icons/mob/modular/som_armor_modules.dmi'
 
-/obj/item/armor_module/module/antenna/activate(mob/living/user)
-	. = ..()
-	addtimer(CALLBACK(src, PROC_REF(update_beacon_location)), 5 SECONDS)
 
-/obj/item/armor_module/module/antenna/proc/update_beacon_location()
-	if(beacon_datum)
-		beacon_datum.drop_location = get_turf(src)
-		addtimer(CALLBACK(src, PROC_REF(update_beacon_location), beacon_datum), 5 SECONDS)
