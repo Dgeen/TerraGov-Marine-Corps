@@ -579,6 +579,7 @@
 	message_admins("[ADMIN_TPMONTY(usr)] forced [O] ([O.type]) to: [method] [message]")
 
 
+/* RUTGMC DELETION
 /datum/admins/proc/drop_bomb()
 	set category = "Admin.Fun"
 	set name = "Drop Bomb"
@@ -679,6 +680,7 @@
 		dyn_explosion(epicenter, ex_power)
 		message_admins("[ADMIN_LOOKUPFLW(usr)] creating an admin explosion of power [ex_power] at [epicenter.loc].")
 		log_admin("[key_name(usr)] created a admin explosion of power [ex_power] at [epicenter.loc].")
+*/
 
 
 /datum/admins/proc/change_security_level()

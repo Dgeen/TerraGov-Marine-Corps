@@ -1,6 +1,3 @@
-/obj/machinery/atmospherics/components/unary/vent_pump
-	atom_flags = null
-
 /obj/machinery/atmospherics/components/unary/vent_pump/attack_facehugger(mob/living/carbon/xenomorph/facehugger/facehugger_attacker, damage_amount = facehugger_attacker.xeno_caste.melee_damage, damage_type = BRUTE, armor_type = MELEE, effects = TRUE, armor_penetration = facehugger_attacker.xeno_caste.melee_ap, isrightclick = FALSE)
 	if(facehugger_attacker.status_flags & INCORPOREAL)
 		return
@@ -12,3 +9,8 @@
 	pipe_vision_img = image(src, loc, layer = ABOVE_HUD_LAYER, dir = dir)
 	pipe_vision_img.plane = ABOVE_HUD_PLANE
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, 1)
+
+/obj/machinery/atmospherics/components/unary/vent_pump/examine(mob/user)
+	. = ..()
+	if(welded)
+		. += span_notice("It seems welded shut.")

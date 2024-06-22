@@ -24,8 +24,9 @@
 	var/atom/movable/pulling
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
 	var/glide_modifier_flags = NONE
-
+/* RU TGMC EDIT
 	var/status_flags = CANSTUN|CANKNOCKDOWN|CANKNOCKOUT|CANPUSH|CANUNCONSCIOUS|CANCONFUSE	//bitflags defining which status effects can be inflicted (replaces canweaken, canstun, etc)
+RU TGMC EDIT */
 	var/generic_canpass = TRUE
 	///What things this atom can move past, if it has the corrosponding flag
 	var/pass_flags = NONE
@@ -473,6 +474,8 @@
 
 ///called when src is thrown into hit_atom
 /atom/movable/proc/throw_impact(atom/hit_atom, speed, bounce = TRUE)
+	if(!hit_atom) // RUTGMC ADDITION
+		return
 	var/hit_successful
 	var/old_throw_source = throw_source
 	hit_successful = hit_atom.hitby(src, speed)

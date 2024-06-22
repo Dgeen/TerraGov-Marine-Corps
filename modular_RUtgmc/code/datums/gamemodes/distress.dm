@@ -32,6 +32,7 @@
 
 /datum/game_mode/infestation/distress/post_setup()
 	. = ..()
+	predator_round()
 	SSpoints.add_strategic_psy_points(XENO_HIVE_NORMAL, 1600)
 	SSpoints.add_tactical_psy_points(XENO_HIVE_NORMAL, 400)
 

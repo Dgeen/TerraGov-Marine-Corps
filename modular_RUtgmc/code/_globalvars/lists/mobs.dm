@@ -62,3 +62,6 @@ GLOBAL_LIST_INIT(forbid_excepts, list(
 	/mob/living/carbon/xenomorph/drone,
 	/mob/living/carbon/xenomorph/hivemind,
 	))
+
+GLOBAL_LIST_EMPTY_TYPED(hellhound_list, /mob/living/carbon/xenomorph/hellhound)
+GLOBAL_LIST_EMPTY_TYPED(yautja_mob_list, /mob/living/carbon/human/species/yautja)

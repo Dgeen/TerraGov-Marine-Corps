@@ -81,6 +81,11 @@
 	if(reagents.get_reagent_amount(/datum/reagent/medicine/quickclot)) //Quickclot stops bleeding, magic!
 		return
 
+//RUTGMC EDIT
+	if(reagents.get_reagent_amount(/datum/reagent/thwei))
+		return
+//RUTGMC EDIT
+
 	if(blood_volume)
 		adjust_blood_volume(-amt)
 		if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean

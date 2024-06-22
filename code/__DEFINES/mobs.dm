@@ -386,9 +386,11 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define BLOOD_VOLUME_SURVIVE 122
 
 // Overlay Indexes
+/* RU TGMC EDIT
 #define WOUND_LAYER 27
 #define MOTH_WINGS_LAYER 26
 #define DAMAGE_LAYER 25
+RU TGMC EDIT */
 #define UNIFORM_LAYER 24
 #define ID_LAYER 23
 #define SHOES_LAYER 22
@@ -413,9 +415,9 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define OVERHEALTH_SHIELD_LAYER 3
 #define FIRE_LAYER 2 //If you're on fire
 #define LASER_LAYER 1 //For sniper targeting laser
-
+/* RU TGMC EDIT
 #define TOTAL_LAYERS 27
-
+RU TGMC EDIT */
 #define MOTH_WINGS_BEHIND_LAYER 1
 
 #define TOTAL_UNDERLAYS 1
@@ -462,7 +464,9 @@ GLOBAL_LIST_INIT(xenoupgradetiers, list(XENO_UPGRADE_BASETYPE, XENO_UPGRADE_INVA
 #define XENO_SLOWDOWN_REGEN 0.4
 
 #define XENO_DEADHUMAN_DRAG_SLOWDOWN 2
-#define XENO_EXPLOSION_GIB_THRESHOLD 0.95 //if your effective bomb armour is less than 5, devestating explosions will gib xenos
+//#define XENO_EXPLOSION_GIB_THRESHOLD 0.95 //if your effective bomb armour is less than 5, devestating explosions will gib xenos //RUTGMC REMOVAL - Explosions
+
+#define KING_SUMMON_TIMER_DURATION 5 MINUTES
 
 #define SPIT_UPGRADE_BONUS(Xenomorph) (Xenomorph.upgrade_as_number() ?  0.6 : 0.45 ) //Primo damage increase
 
@@ -781,7 +785,7 @@ GLOBAL_LIST_INIT(human_body_parts, list(BODY_ZONE_HEAD,
 #define GRAB_PIXEL_SHIFT_NECK 16
 
 #define HUMAN_CARRY_SLOWDOWN 0.35
-#define HUMAN_EXPLOSION_GIB_THRESHOLD 0.1
+//#define HUMAN_EXPLOSION_GIB_THRESHOLD 0.1 //RUTGMC DELETION, explosions
 
 
 // =============================

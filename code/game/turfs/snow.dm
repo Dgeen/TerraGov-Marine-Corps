@@ -146,6 +146,7 @@
 			//Update turfs that are near us, but only once
 			D.update_appearance(ALL)
 
+/* RUTGMC DELETION
 //Explosion act
 /turf/open/floor/plating/ground/snow/ex_act(severity)
 	switch(severity)
@@ -162,6 +163,7 @@
 	update_appearance()
 	update_sides()
 	return ..()
+*/
 
 //Fire act; fire now melts snow as it should; fire beats ice
 /turf/open/floor/plating/ground/snow/flamer_fire_act(burnlevel)

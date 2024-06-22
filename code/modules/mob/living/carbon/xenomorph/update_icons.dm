@@ -69,10 +69,11 @@
 		overlays_standing[L_HAND_LAYER] = l_hand.make_worn_icon(inhands = TRUE, slot_name = slot_l_hand_str, default_icon = 'icons/mob/inhands/items/items_left.dmi', default_layer = L_HAND_LAYER)
 		apply_overlay(L_HAND_LAYER)
 
+/*
 /mob/living/carbon/xenomorph/proc/create_shriekwave()
 	overlays_standing[SUIT_LAYER] = image("icon"='icons/Xeno/64x64_Xeno_overlays.dmi', "icon_state" = "shriek_waves") //Ehh, suit layer's not being used.
 	apply_temp_overlay(SUIT_LAYER, 3 SECONDS)
-
+*/
 /mob/living/carbon/xenomorph/proc/create_stomp()
 	overlays_standing[SUIT_LAYER] = image("icon"='icons/Xeno/64x64_Xeno_overlays.dmi', "icon_state" = "stomp") //Ehh, suit layer's not being used.
 	apply_temp_overlay(SUIT_LAYER, 1.2 SECONDS)
