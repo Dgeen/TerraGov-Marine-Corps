@@ -291,6 +291,7 @@
 	update_icon()
 
 /obj/item/weapon/yautja/combistick/update_icon()
+	. = ..()
 	if(item_flags & WIELDED)
 		item_state = "combistick_w"
 	else if(!on)

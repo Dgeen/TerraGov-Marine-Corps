@@ -72,6 +72,7 @@
 	var/loaded  = TRUE
 
 /obj/item/tool/surgery/healing_gun/update_icon()
+	. = ..()
 	if(loaded)
 		icon_state = "healing_gun"
 	else
