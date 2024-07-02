@@ -61,6 +61,8 @@
 				return GLOB.xeno_types_tier_two
 	switch(tier)
 		if(XENO_TIER_ZERO)
+			if(istype(xeno_caste, /datum/xeno_caste/larva_predalien))
+				return list(/mob/living/carbon/xenomorph/predalien)
 			if(!istype(xeno_caste, /datum/xeno_caste/hivemind))
 				return GLOB.xeno_types_tier_one
 		if(XENO_TIER_ONE)

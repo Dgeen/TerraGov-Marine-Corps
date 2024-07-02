@@ -32,8 +32,6 @@
 	max_stamina = 250
 	blood_color = "#20d450"
 	flesh_color = "#907E4A"
-	// speech_sounds = list('sound/voice/pred_click1.ogg', 'sound/voice/pred_click2.ogg') //CHECK_LATER
-	// speech_chance = 100
 	death_message = "clicks in agony and falls still, motionless and completely lifeless..."
 
 	brute_damage_icon_state = "pred_brute"

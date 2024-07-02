@@ -33,9 +33,6 @@
 
 	// *** Evolution *** //
 	evolution_threshold = 50
-	// evolves_to = list( //CHECK_LATER
-	// 	/mob/living/carbon/xenomorph/predalien,
-	// )
 
 	// *** Flags *** //
 	caste_flags = CASTE_EVOLUTION_ALLOWED|CASTE_INNATE_HEALING
